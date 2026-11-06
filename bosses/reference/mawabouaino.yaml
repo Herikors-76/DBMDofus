@@ -1,0 +1,19 @@
+id: mawabouaino
+nom: Mawabouaino
+type: donjon
+contenu: Fonderie des Waddicts
+niveau: 60
+position: "-3,-4 (Île de Pwâk)"
+pv: "1400-2100"
+sorts:
+  - { nom: Chocolave, effet: "Ligne jusqu'à 10 PO, -résistance terre" }
+  - { nom: Éclat, effet: "Zone de 2, repousse" }
+  - { nom: Chocohowte, effet: "Invoque un Twakeuf, active l'effet de salle" }
+mecaniques:
+  - { nom: Glyphe bonus, declencheur: mort d'un ennemi, effet: "Glyphe : +3 PA et +300 puissance 2 tours ; disparaît à la mort du boss" }
+strategie:
+  - Utiliser les glyphes avant de tuer le boss
+alertes:
+  - { quand: mort_monstre, texte: "Glyphe bonus : +3 PA", niveau: info }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14720/fonderie-waddicts]

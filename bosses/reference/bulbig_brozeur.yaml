@@ -1,0 +1,18 @@
+id: bulbig_brozeur
+nom: Bulbig Brozeur
+type: donjon
+contenu: Caverne des Bulbes
+niveau: 50
+position: "19,-22"
+pv: "2600-3800"
+sorts:
+  - { nom: Bulvocation, effet: "Invoque un Bulbe au hasard (très résistant)" }
+  - { nom: Bultombe, effet: "Air en ligne de 3" }
+mecaniques:
+  - { nom: Accès, declencheur: salle précédente, effet: "Se placer sur les dalles pour ouvrir l'accès au boss" }
+strategie:
+  - Surveiller l'accumulation d'invocations
+alertes:
+  - { quand: debut_tour_boss, texte: "Nouvelle invocation de Bulbe", niveau: info }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13884/caverne-bulbes]

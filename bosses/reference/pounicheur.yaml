@@ -1,0 +1,19 @@
+id: pounicheur
+nom: Pounicheur
+type: donjon
+contenu: Miausolée du Pounicheur (dimension Écaflipus)
+niveau: 110
+position: "3,-9 (Écaflipus)"
+pv: "4400-6200"
+sorts:
+  - { nom: Kissifrotsipik, effet: "Répartit 200 % des dégâts subis entre ses adversaires (désactivable via les puces)" }
+  - { nom: Poulvérisation, effet: "Neutre + poussée de 4 aux adjacents" }
+mecaniques:
+  - { nom: Puces, declencheur: attaquer le boss avec 3 puces d'états différents, effet: "Renvoi de dégâts ; frapper une puce : +1 à son état, -1 aux autres ; remise à zéro à chaque tour du boss" }
+strategie:
+  - Égaliser les 3 puces avant chaque attaque
+  - Tuer vite la Gériatique (retire des résistances)
+alertes:
+  - { quand: avant_attaque_boss, texte: "Les 3 puces au même état ?", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14670/miausolee-pounicheur]

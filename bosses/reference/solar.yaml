@@ -1,0 +1,26 @@
+id: solar
+nom: Solar
+type: donjon
+contenu: Tour de Solar
+niveau: 200
+position: "-31,15"
+pv: "13000-19000"
+etats: [Invulnérable sauf en Nadir]
+phases:
+  cycle: [Aurore (tours 1-3), Zénith (4-6), Crépuscule (7-9), Nadir (10-12)]
+  reprise: tour 13
+  avance: Nécronyx sur Solar le fait passer à l'état suivant à son tour
+mecaniques:
+  - { nom: Glyphes de bordure, declencheur: selon l'état, effet: "Aurore : -puissance ; Zénith : érosion ; Crépuscule : -PA ; Nadir : -PO" }
+  - { nom: Calcinés, declencheur: mort d'un Calciné, effet: "Réinvoqué par le suivant ; Nécronyx AVANT de le tuer le transforme en statue" }
+  - { nom: Distance, declencheur: fin de tour à plus de 6 PO de Solar, effet: "Le perso est repoussé" }
+strategie:
+  - Calcinés d'abord, Nécronyx avant de les tuer (30 % d'érosion 3 tours sauf sur Solar)
+  - Sortir vite du Zénith
+  - Tout donner en Nadir puis réappliquer Nécronyx
+alertes:
+  - { quand: debut_tour, tours: [10], texte: "Nadir : Solar vulnérable, burst !", niveau: critique }
+  - { quand: fin_tour_joueur, texte: "Moins de 6 PO de Solar", niveau: important }
+  - { quand: avant_kill, texte: "Vérifiez la condition avant de tuer Solar (K.O. de l'équipe sinon)", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14286/tour-solar]

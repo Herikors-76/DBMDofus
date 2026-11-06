@@ -1,0 +1,18 @@
+id: abraknyde_ancestral
+nom: Abraknyde Ancestral
+type: donjon
+contenu: Domaine Ancestral
+niveau: 90
+position: "-9,-14"
+pv: "3600-5400"
+sorts:
+  - { nom: Branche Paralysante, effet: "Poison neutre selon les PA utilisés" }
+  - { nom: Reconstitution Abraknydienne, effet: "Tour 6 puis tous les 5 tours : récupère tous ses PV" }
+  - { nom: Morsure Sylvestre, effet: "Contact, neutre, -PA, -agilité" }
+  - { nom: Invocation d'Arakne Majeure, effet: "Invoque une Arakne Majeure" }
+strategie:
+  - Le tuer avant le tour 6
+alertes:
+  - { quand: debut_tour, tours_cycle: { depart: 5, pas: 5 }, texte: "Régénération complète au prochain tour : burst !", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13753/donjon-abraknydes]

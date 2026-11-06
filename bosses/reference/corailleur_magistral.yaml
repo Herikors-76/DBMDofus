@@ -1,0 +1,17 @@
+id: corailleur_magistral
+nom: Corailleur Magistral
+type: donjon
+contenu: Grotte Hesque
+niveau: 50
+position: "-59,15"
+pv: "2000-2900"
+sorts:
+  - { nom: Coraillement Magistral, effet: "-3 PM ; lui donne 12 PA et 400 puissance" }
+  - { nom: Lancer de Corail Magistral, effet: "Air + vol d'agilité" }
+  - { nom: Frappe de Corail Magistrale, effet: "Tue au corps à corps" }
+strategie:
+  - Rester à distance, ne jamais finir son tour à côté de lui
+alertes:
+  - { quand: fin_tour_joueur, texte: "JAMAIS au contact du Corailleur (mort)", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13863/grotte-hesque]

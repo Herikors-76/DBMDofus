@@ -1,0 +1,19 @@
+id: boostache
+nom: Boostache
+type: donjon
+contenu: Maison Fantôme
+niveau: 50
+position: "-13,-41"
+pv: "820-1200"
+sorts:
+  - { nom: Frayeurs, effet: "Repousse, -PA" }
+  - { nom: L'Enfer des Zombies, effet: "Ressuscite le dernier monstre mort en zombie (max 10)" }
+  - { nom: Le Dentiste, effet: "Air en vol de vie, -PA" }
+mecaniques:
+  - { nom: Zombies, declencheur: mort de Boostache, effet: "Les zombies meurent avec lui" }
+strategie:
+  - Le tuer en premier
+alertes:
+  - { quand: debut_combat, texte: "Focus Boostache (les zombies meurent avec lui)", niveau: info }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13357/maison-fantome]

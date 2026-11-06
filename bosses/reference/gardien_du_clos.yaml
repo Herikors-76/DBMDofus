@@ -1,0 +1,28 @@
+id: gardien_du_clos
+nom: Gardien du Clos
+type: raid_guilde
+contenu: Sanctuaire des Jardins éternels (gardien 2)
+joueurs: { max: 4 }
+etats_initiaux: [Invulnérable, Lourd]
+accompagnants: [Tritulipe, Muguégide, Dahliane, Fracamélia]
+mecaniques:
+  - nom: Glyphes marron
+    effet: 8 glyphes, il faut marcher sur les 4 bons pour lever l'invulnérabilité ; un mauvais glyphe termine le combat et coûte des PV de raid
+    indice: Les objets sous les fleurs cliquées pendant l'énigme de l'Ouvrage Monochrome
+    note: Les invocations peuvent déclencher les glyphes
+sorts:
+  - { nom: Aéroflore, effet: "850 air en croix + retrait de tacle ; portée 6, 1 fois par tour" }
+  - { nom: Brasilia, effet: "950 feu en cercle de taille 2 + Insoignable ; portée 8, relance 2 tours" }
+  - { nom: Bulbaume, effet: "Soin d'environ 1 000 sur un allié ; portée 8" }
+  - { nom: Écorcide, effet: "600 terre, -50 % de soins finaux ; portée 2, 3 fois par tour" }
+  - { nom: Hydrose, effet: "Poison de 1 000 eau sur 2 tours, +1 000 à chaque soin reçu (auto-soin ×2) ; portée 6, relance 3 tours" }
+strategie:
+  - Équiper un Prymune
+  - Préférer les protections aux soins
+  - NE PAS soigner la cible d'Hydrose
+alertes:
+  - { quand: { evenement: sort_lance, sort: Hydrose }, texte: "Hydrose : ne soignez pas la cible !", niveau: critique }
+  - { quand: { evenement: debut_combat }, texte: "Seulement les 4 bons glyphes (énigme de l'Ouvrage)", niveau: critique }
+memoire_raid_requise: [objets_enigme_ouvrage]
+fiabilite: source_unique
+sources: [https://www.dofuspourlesnoobs.com/sanctuaire-des-jardins-eternels.html]

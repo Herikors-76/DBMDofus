@@ -1,0 +1,20 @@
+id: kwakwa
+nom: Kwakwa
+type: donjon
+contenu: Nid du Kwakwa
+niveau: 50
+position: "-4,-7"
+pv: "1100-1600"
+sorts:
+  - { nom: Kwamagueul, effet: "Alliés +PA, +PM, +puissance" }
+  - { nom: Kwakalarme, effet: "Invoque un Kwak ou un Bwak" }
+  - { nom: Kwakoukas, effet: "Poussée" }
+  - { nom: Wakpot, effet: "Vol de vie" }
+mecaniques:
+  - { nom: Résistances aléatoires, declencheur: début du combat, effet: "Sorts et résistances d'un élément tiré au hasard" }
+strategie:
+  - Acolytes d'abord, couvrir tous les éléments
+alertes:
+  - { quand: debut_combat, texte: "Testez les éléments (résistances aléatoires)", niveau: info }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13759/nid-kwawka]

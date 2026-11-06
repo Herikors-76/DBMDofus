@@ -1,0 +1,17 @@
+id: mob_l_eponge
+nom: Mob l'Éponge
+type: donjon
+contenu: Château Ensablé
+niveau: 20
+position: "13,-28"
+pv: "280-420"
+sorts:
+  - { nom: Dégraissage, effet: "Contact et ligne de 8, vol de vie, -2 PO" }
+  - { nom: Rinçage, effet: "Réduit la durée des envoûtements" }
+  - { nom: Régénération Spontanée, effet: "Soigne ses alliés ~60" }
+strategie:
+  - À distance, pas collé à un allié
+alertes:
+  - { quand: fin_tour_joueur, texte: "Restez à distance", niveau: info }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13373/donjon-ensable]

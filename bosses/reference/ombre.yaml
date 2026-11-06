@@ -1,0 +1,26 @@
+id: ombre
+nom: Ombre
+type: donjon
+contenu: Pyramide d'Ombre
+niveau: 190
+position: "6,13 (Dimension Obscure)"
+pv: "11000-17000"
+etats: [Invulnérable tant que la Silhouette n'est pas dans le glyphe du Globilum]
+sorts:
+  - { nom: Pénombre, effet: "Augmente Distorsion ; +2 PM au lanceur et aux alliés à 2 cases" }
+  - { nom: Distorsion, effet: "Gros dégâts eau en cercle de rayon 3 autour de lui" }
+  - { nom: Liaison, effet: "2 à 7 PO, attire de 3 et avance de 3 ; dégâts neutres cumulatifs" }
+mecaniques:
+  - { nom: Vulnérabilité, declencheur: Silhouette dans le glyphe, effet: "Ombre vulnérable, sauf s'il est lui-même dans le glyphe" }
+  - { nom: Glyphe du Globilum, declencheur: fin du tour du Globilum, effet: "Glyphe autour du Globilum où placer la Silhouette" }
+  - { nom: Silhouette, declencheur: chaque tour, effet: "Déplaçable une seule fois par tour" }
+strategie:
+  - Tuer les sbires d'abord, le Sombléro en priorité
+  - Tacleur ou placeurs pour garder la Silhouette dans le glyphe (Xélor, Sacrieur, Écaflip)
+  - Rester loin d'Ombre
+alertes:
+  - { quand: fin_tour_globilum, texte: "Silhouette dans le nouveau glyphe", niveau: important }
+  - { quand: chaque_tour, texte: "Silhouette : un seul déplacement par tour", niveau: important }
+  - { quand: chaque_tour, texte: "Gardez Ombre à distance (Liaison se cumule)", niveau: info }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14653/pyramide-ombre]

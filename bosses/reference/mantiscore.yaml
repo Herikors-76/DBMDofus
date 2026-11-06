@@ -1,0 +1,19 @@
+id: mantiscore
+nom: Mantiscore
+type: donjon
+contenu: Cimetière des Mastodontes
+niveau: 80
+position: "19,-61"
+pv: "2600-3700"
+sorts:
+  - { nom: Force Poigne, effet: "Eau, vole 2 PA, au contact" }
+  - { nom: Tombeau du Désert, effet: "Terre, Enraciné 2 tours, 2 à 5 PO" }
+  - { nom: Provocaspion, effet: "Attire de 3" }
+mecaniques:
+  - { nom: Sursis, declencheur: l'attaquer, effet: "Il semble se téléporter en symétrie du joueur en Sursis" }
+strategie:
+  - Limiter les tours au contact
+alertes:
+  - { quand: fin_tour_joueur, texte: "Sortez du contact", niveau: info }
+fiabilite: a_verifier
+sources: [https://dofus.jeuxonline.info/article/14247/cimetiere-mastodontes, https://www.millenium.org/guide/420812.html]

@@ -1,0 +1,21 @@
+id: pere_fwetard
+nom: Père Fwetar
+type: donjon
+contenu: Maison du Papa Nowel
+niveau: 180
+position: "-34,-89 (Île de Nowel)"
+accompagnants: [2 Yetis, 4 Glutins Farceurs]
+sorts:
+  - { nom: Fwetage, effet: "~700 jusqu'à 20 PO, portée minimale 8 ; critique en vol de vie" }
+  - { nom: Gobage, effet: "Corps à corps" }
+  - { nom: Aspir'nenfan, effet: "Attire de 4 (combo avec Gobage)" }
+mecaniques:
+  - { nom: Poutch Ingball, declencheur: perte d'une partie de ses PV, effet: "Se soigne entièrement et invoque un Poutch (1 500 PV) qui devient une marionnette au tour suivant (Dark Vlad, Dragon Cochon, Meulou, Bouftou Royal ou Minotoror)" }
+strategie:
+  - Tuer vite les Yetis et Glutins
+  - Tuer le Poutch avant sa transformation
+alertes:
+  - { quand: poutch_invoque, texte: "Tuez le Poutch ce tour-ci !", niveau: critique }
+  - { quand: debut_tour_boss, texte: "À moins de 8 PO, Fwetage ne vous touche pas", niveau: info }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13895/maison-papa-nowel]

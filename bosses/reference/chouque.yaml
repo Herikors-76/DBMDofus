@@ -1,0 +1,18 @@
+id: chouque
+nom: Chouque
+type: donjon
+contenu: Bateau du Chouque
+niveau: 90
+position: "33,3"
+pv: "3100-4500"
+sorts:
+  - { nom: Coup de Sabre Maudit, effet: "Corps à corps, réduit les effets aléatoires" }
+  - { nom: Téléportation Spectrale, effet: "Échange avec un allié" }
+mecaniques:
+  - { nom: Soutien, declencheur: son tour, effet: "Boost de puissance à ses alliés, baisse la vôtre" }
+strategie:
+  - Sbires d'abord, Chouque en dernier
+alertes:
+  - { quand: debut_combat, texte: "Chouque en dernier", niveau: info }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14017/bateau-pirate-chouque-230]

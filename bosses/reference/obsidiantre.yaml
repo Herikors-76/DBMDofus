@@ -1,0 +1,25 @@
+id: obsidiantre
+nom: Obsidiantre
+type: donjon
+contenu: Hypogée de l'Obsidiantre
+niveau: 160
+position: "-71,-83"
+pv: "7000-10000"
+etats: [Invulnérable]
+sorts:
+  - { nom: Scie lisse, effet: "Invoque la Pougnette" }
+  - { nom: Objection, effet: "Si invulnérable : feu en vol de vie, 1 à 10 PO en ligne" }
+  - { nom: Andésite, effet: "Ressuscite le dernier allié mort à 10 %" }
+  - { nom: Scie licate, effet: "1 à 3 PO, terre = 10 % des PV perdus + échange" }
+mecaniques:
+  - { nom: Vulnérabilité, declencheur: allié poussé contre le boss, effet: "Vulnérable 3 tours" }
+  - { nom: Rage, declencheur: perte de PV, effet: "Plus il est bas, plus il frappe fort" }
+  - { nom: Pougnette, declencheur: tour 5, effet: "Explose et tue les ennemis à plus de 7 PO" }
+strategie:
+  - Poussée d'un allié contre lui (Zobal, Appui)
+  - Gagner avant le tour 5
+alertes:
+  - { quand: debut_tour, tours: [4], texte: "Pougnette explose au prochain tour : à moins de 7 PO !", niveau: critique }
+  - { quand: etat_invulnerable, texte: "Poussez un allié contre l'Obsidiantre", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14271/hypogee-obsidiantre, https://www.millenium.org/guide/142575.html]

@@ -1,0 +1,22 @@
+id: mansot_royal
+nom: Mansot Royal
+type: donjon
+contenu: Excavation du Mansot Royal
+niveau: 140
+position: "-64,-54"
+pv: "4900-7200"
+etats: [Invulnérable]
+sorts:
+  - { nom: Mansoluble, effet: "Eau en vol de vie au contact + échange" }
+  - { nom: Mansopoudrage, effet: "Si poussé/attiré pendant l'effet : ennemis à plus de 4 cases mansomnambules" }
+  - { nom: Mansolénoïde, effet: "Feu = 10 % des PV manquants" }
+mecaniques:
+  - { nom: Vulnérabilité, declencheur: soin réel sur un allié au contact du boss, effet: "Lève l'invulnérabilité ; les voisins de l'allié soigné prennent des dégâts" }
+  - { nom: Mansodah, declencheur: mansots soignés, effet: "Déclenche Mansodah" }
+strategie:
+  - Soigner juste ce qu'il faut
+  - Le rendre vulnérable avant que les autres monstres s'activent
+alertes:
+  - { quand: etat_invulnerable, texte: "Soignez un allié BLESSÉ au contact du boss", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13451/donjon-excavation-mansot-royal]

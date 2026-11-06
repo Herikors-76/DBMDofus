@@ -1,0 +1,25 @@
+id: hanshi_et_shihan
+nom: Hanshi et Shihan
+type: donjon
+contenu: Dojo du Vent
+niveau: 140
+position: "20,-37"
+boss:
+  - { nom: Hanshi, pv: "5800-8000", note: "Moitié moins de dégâts en mêlée" }
+  - { nom: Shihan, pv: "5800-7700", note: "Moitié moins de dégâts à distance" }
+sorts:
+  - { nom: Jufang, effet: "Zone air + poison" }
+  - { nom: Da Bàng, effet: "Attire la cible" }
+  - { nom: Qìkǒng, effet: "Piège feu qui téléporte Hanshi" }
+mecaniques:
+  - { nom: Dégâts partagés, declencheur: permanent, effet: "Les deux boss se partagent les dégâts" }
+  - { nom: Hanshi enragé, declencheur: Hanshi sous 50 %, effet: "+4 PM, +20 % de dégâts en mêlée" }
+  - { nom: Shihan enragé, declencheur: Shihan sous 70 %, effet: "+2 PM, sorts sans ligne de vue pendant 2 tours" }
+strategie:
+  - Hanshi à distance, Shihan au corps à corps
+  - Éviter les pièges Qìkǒng
+alertes:
+  - { quand: seuil_pv, cible: Hanshi, valeurs: ["50 %"], texte: "Hanshi enragé : +4 PM", niveau: important }
+  - { quand: seuil_pv, cible: Shihan, valeurs: ["70 %"], texte: "Shihan : sorts sans ligne de vue 2 tours", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14905/dojo-vent-hanshi-shihan]

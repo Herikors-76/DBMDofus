@@ -1,0 +1,26 @@
+id: roi_nidas
+nom: Roi Nidas
+type: donjon
+contenu: Palais du Roi Nidas
+niveau: 200
+position: "-5,-5 (Énutrosor)"
+pv: "15000-22000"
+sorts:
+  - { nom: Mon précieux, effet: "Passif : échange avec la Boubourse (terre sur elle) et -50 % de dégâts finaux 1 tour" }
+  - { nom: Toucher de Nidas, effet: "Invoque la Boubourse" }
+  - { nom: Décoffrage, effet: "Corps à corps, tue la Boubourse" }
+  - { nom: Liquidation, effet: "1 à 5 PO, feu + eau (20 % des PV érodés du lanceur)" }
+  - { nom: Confusion, effet: "1 à 5 PO, Zizanie : air en zone de 2 autour de la cible au tour suivant" }
+  - { nom: Attrape-Mutin, effet: "1 à 6 PO, attire de 6, neutre, échange" }
+mecaniques:
+  - { nom: Boubourse, declencheur: début de son tour, effet: "Tue les invocations à son contact et se désenvoûte de 2 tours" }
+  - { nom: Changement de camp, declencheur: mort de la Boubourse, effet: "Tuée par un joueur : réinvoquée près de lui ; par un monstre : change de camp ; par Nidas : il la réinvoque" }
+  - { nom: Téléportation, declencheur: Boubourse dans le camp ennemi, effet: "Nidas peut se téléporter sur elle" }
+strategie:
+  - Ne pas coincer la Boubourse ni lui mettre de bouclier
+  - La tuer si elle est dans le camp ennemi pour la récupérer
+alertes:
+  - { quand: boubourse_camp_ennemi, texte: "Nidas peut se téléporter sur la Boubourse", niveau: important }
+  - { quand: etat_joueur, etat: Zizanie, texte: "Zizanie : écartez-vous de 2 cases", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13559/donjon-nidas]

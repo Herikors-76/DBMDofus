@@ -1,0 +1,26 @@
+id: ilyzaelle
+nom: Ilyzaelle
+type: donjon
+contenu: Belvédère d'Ilyzaelle
+niveau: 200
+position: "-61,-79 (Château du Comte)"
+pv: "42000-60000"
+objectif: Descendre sous 50 % de PV puis survivre 2 tours avec elle dans votre camp (pas besoin de la tuer)
+sorts:
+  - { nom: Vers les ténèbres, effet: "Attire les ennemis de 10 cases ; tous les 3 tours dès le tour 2" }
+  - { nom: Lance de l'effroi, effet: "Feu + Pacifiste 1 tour" }
+  - { nom: Hantâme, effet: "Téléportation, feu + 40 % d'érosion en cercle de 2" }
+mecaniques:
+  - { nom: Libération, declencheur: "chaque -25 % de PV max", effet: "Se libère des Brulâmes et passe dans votre camp 2 tours ; pose un glyphe +400 % de dégâts finaux (les Brulâmes qui y entrent perdent ~50 % PV)" }
+  - { nom: Retour, declencheur: après 2 tours, effet: "Repasse sous contrôle des Brulâmes, invulnérable et immobile son 1er tour" }
+  - { nom: Victoire, declencheur: "sous 50 % + 2 tours dans votre camp", effet: "Elle tue les Brulâmes restants, fin du combat" }
+strategie:
+  - Exploiter son glyphe quand elle est de votre côté
+  - Se cacher derrière un obstacle contre l'attraction
+  - Rester loin des Brulâmes
+alertes:
+  - { quand: tous_les_3_tours_des_tour_2, texte: "Attraction de 10 : derrière un obstacle", niveau: important }
+  - { quand: retour_brulames, texte: "Retirez 25 % de plus pour la libérer", niveau: important }
+  - { quand: sous_50_pct, texte: "Tenez 2 tours avec Ilyzaelle dans votre camp", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14668/belvedere-ilyzaelle]

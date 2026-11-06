@@ -16,3 +16,7 @@ REPRISE.md
 ETAT.md
 README.md
 requirements*.txt
+# Fiches de référence (relevé brut de 131 boss) : hors graphe, sinon elles noient le code
+bosses/reference/
+docs/bosses/reference/
+outils/sources/

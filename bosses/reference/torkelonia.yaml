@@ -1,0 +1,23 @@
+id: torkelonia
+nom: Torkélonia
+type: donjon
+contenu: Sanctuaire de Torkélonia
+niveau: 120
+position: "-84,-16"
+pv: "14000-22000"
+sorts:
+  - { nom: Ricochet sacré, effet: "-2 PA" }
+  - { nom: Faisceau lunaire, effet: "Gros feu" }
+  - { nom: Gouttelunaire, effet: "Eau + érosion" }
+mecaniques:
+  - { nom: Globe central, declencheur: globe frappé, effet: "Le glyphe avance (bonus différents, non cumulés)" }
+  - { nom: Vulnérabilité, declencheur: sort offensif lancé depuis le glyphe, effet: "Le monstre visé est vulnérable jusqu'à la fin du tour" }
+  - { nom: Tour du glyphe, declencheur: le glyphe a fait un tour complet, effet: "Équipe -1 PA ou -1 PM (en alternance)" }
+  - { nom: Coup fatal, declencheur: tuer Torkélonia, effet: "L'attaquant meurt aussi (sauf en Pleine Lune)" }
+strategie:
+  - Garder 2 persos en vie avant le kill
+  - Frapper le globe avec un petit sort pour décaler le glyphe
+alertes:
+  - { quand: avant_kill_boss, texte: "Tuer Torkélonia tue l'attaquant (sauf Pleine Lune)", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14746/sanctuaire-torkelonia]

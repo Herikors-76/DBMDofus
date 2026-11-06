@@ -1,0 +1,20 @@
+id: rat_blanc
+nom: Rat Blanc
+type: donjon
+contenu: Donjon des Rats de Bonta
+niveau: 110
+position: "-35,-59"
+pv: "3500-5600"
+sorts:
+  - { nom: Raclée, effet: "Feu en vol de vie, -PA/PM à la cible et aux alliés adjacents" }
+  - { nom: Ravage, effet: "Gros terre en ligne de 3, +critique pour lui" }
+  - { nom: Peste Blanche, effet: "Retire les envoûtements" }
+mecaniques:
+  - { nom: Rascasse, declencheur: dégâts d'un élément (tous les 5 tours), effet: "+50 % de résistance à cet élément 2 tours" }
+strategie:
+  - Éviter de s'aligner à plusieurs
+  - Changer d'élément après Rascasse
+alertes:
+  - { quand: sort_lance, sort: Rascasse, texte: "Rascasse : changez d'élément", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13880/donjon-rats-bonta]

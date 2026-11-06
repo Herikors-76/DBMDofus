@@ -1,0 +1,24 @@
+id: ben_le_ripate
+nom: Ben le Ripate
+type: donjon
+contenu: Épave du Grolandais Violent
+niveau: 150
+position: "-60,-84"
+pv: "6000-8900"
+etats: [Invulnérable]
+sorts:
+  - { nom: Mousse Haillon, effet: "Eau au contact, ligne de 5" }
+  - { nom: Tore tue, effet: "Invoque un Hamrack" }
+  - { nom: Frère de la côte, effet: "Invoque un monstre de la zone au hasard" }
+  - { nom: Mâte l'eau, effet: "Attire de 3, feu selon ses PV manquants" }
+mecaniques:
+  - { nom: Hamrack, declencheur: Hamrack au contact de Ben, effet: "Explose : Ben vulnérable 4 tours" }
+  - { nom: PM du Hamrack, declencheur: invocation, effet: "Seulement 2 PM : lui en donner ; ne pas le tacler" }
+  - { nom: Rage, declencheur: perte de PV, effet: "Ben frappe plus fort en fin de combat" }
+strategie:
+  - Donner des PM au Hamrack dès son invocation
+  - Soins et placement pour la fin du combat
+alertes:
+  - { quand: hamrack_invoque, texte: "Donnez des PM au Hamrack, ne le taclez pas", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14180/epave-grolandais-violent]

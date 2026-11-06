@@ -1,0 +1,27 @@
+id: bethel_akarna
+nom: Bethel Akarna
+type: donjon
+contenu: Tour de Bethel
+niveau: 200
+position: "-48,-82"
+pv: "6500-9600"
+etats: [Invulnérable aux joueurs ; seul le Dagon des Profondeurs peut le blesser]
+sorts:
+  - { nom: Pantang, effet: "1 à 12 PO, gros dégâts air, -20 % de résistances 3 tours" }
+  - { nom: Vindicte, effet: "Malus aléatoire sur lui (-2/-3 PA ou PM) OU partage des dégâts avec les ennemis à 2 cases de la cible" }
+  - { nom: Offrande Monolithique, effet: "Invoque un Monolithe invulnérable à distance" }
+  - { nom: Étoile de Mer, effet: "1 à 10 PO, -300 puissance sur la cible et ses voisins, Tentacules Vaporeux qui bloquent" }
+mecaniques:
+  - { nom: Dagon des Profondeurs, declencheur: invoqué par Bethel, effet: "Le faire passer dans votre camp puis l'amener au corps à corps de Bethel ; à répéter" }
+  - { nom: Monolithe, declencheur: invocation, effet: "Ne prend des dégâts qu'au contact ; boucliers pour lui et ses alliés ; le détruire fait passer le Dagon de votre côté" }
+  - { nom: Bordures, declencheur: perso sur la bordure, effet: "Glyphe qui retire tous les PM" }
+strategie:
+  - Nécronyx sur Bethel (plus de poussée)
+  - Détruire le Monolithe au corps à corps
+  - Booster le Dagon une fois dans votre camp
+alertes:
+  - { quand: debut_combat, texte: "Évitez les bordures (perte de tous les PM)", niveau: critique }
+  - { quand: dagon_ennemi, texte: "Gardez le Dagon loin de vous", niveau: critique }
+  - { quand: debut_tour_boss, texte: "Vindicte : malus ou partage de dégâts", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14654/tour-bethel]

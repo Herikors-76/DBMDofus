@@ -1,0 +1,21 @@
+id: grozilla_grasmera
+nom: Grozilla et Grasmera
+type: donjon
+contenu: Cratère Minus (tous niveaux)
+niveau: 50
+position: "-51,40 (Vulkania)"
+pv: "16000-23000 (chacun, version normale)"
+boss: [Grozilla, Grasmera]
+sorts:
+  - { nom: Atomes Crochus, effet: "Tous les 5 tours dès le tour 5 : si les boss sont à plus de 2 cases l'un de l'autre, l'équipe est anéantie" }
+  - { nom: Fission, effet: "Si l'un meurt, l'autre tue un adversaire par tour" }
+mecaniques:
+  - { nom: Mort simultanée, declencheur: fin du combat, effet: "Les deux boss doivent mourir le même tour" }
+strategie:
+  - Les rapprocher aux tours 6, 11, 16…
+  - Les tuer le même tour
+alertes:
+  - { quand: debut_tour, tours_cycle: { depart: 5, pas: 5 }, texte: "Atomes Crochus : boss à 2 cases ou moins l'un de l'autre !", niveau: critique }
+  - { quand: mort_un_boss, texte: "Tuez l'autre CE tour (Fission)", niveau: critique }
+fiabilite: a_verifier   # tour exact (5 ou 6) à confirmer
+sources: [https://dofus.jeuxonline.info/article/14677/antre-grozilla-grasmera-cratere-minus]

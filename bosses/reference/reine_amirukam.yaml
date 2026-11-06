@@ -1,0 +1,24 @@
+id: reine_amirukam
+nom: Reine Amirukam
+type: donjon
+contenu: Souvenir d'Imagiro
+niveau: 200
+position: "2,0 (Royaume de papier)"
+pv: "27000-38000"
+sorts:
+  - { nom: Toner Deubraiste, effet: "4 à 12 PO ligne/diagonale, poison eau, +5 % de dégâts subis 5 tours" }
+  - { nom: Brouillard d'encre, effet: "Tous les 4 tours, glyphes autour de ses alliés" }
+  - { nom: Getsuga Tenshō, effet: "3 à 8 PO ligne/diagonale : Intacleur (50 %), Insoignable (30 %) ou Pacifiste (20 %)" }
+  - { nom: Monarchie des Roses Noires, effet: "Cône de 5 au contact, eau, poussée de 4, -2 PO, +20 fuite aux alliés" }
+mecaniques:
+  - { nom: Lotus, declencheur: "80 %, 50 %, 25 % de PV", effet: "Invulnérable et enracinée 5 tours, puis reprend toute sa vitalité" }
+  - { nom: Roi Imagami, declencheur: chaque Lotus, effet: "Invoqué au contact du joueur le plus proche, contrôlé par l'équipe 5 tours max" }
+  - { nom: Bonus monstres, declencheur: permanent, effet: "Les autres monstres ont +13 500 PV" }
+strategie:
+  - Utiliser le Roi Imagami pour tuer les autres monstres pendant le Lotus
+  - Prévoir ~69 000 dégâts à 4 joueurs
+alertes:
+  - { quand: seuil_pv, valeurs: ["80 %", "50 %", "25 %"], texte: "Lotus : prenez le Roi Imagami, nettoyez", niveau: important }
+  - { quand: fin_lotus, texte: "Redescendez ses PV", niveau: info }
+fiabilite: a_verifier   # « reprend toute sa vitalité » à confirmer
+sources: [https://dofus.jeuxonline.info/article/14924/souvenir-imagiro-pandala-iii-dofus-258]

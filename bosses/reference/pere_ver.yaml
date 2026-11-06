@@ -1,0 +1,20 @@
+id: pere_ver
+nom: Père Ver
+type: donjon
+contenu: Boyau du Père Ver
+niveau: 170
+position: "7,-70"
+etats: [Immobile]
+sorts:
+  - { nom: Paternalisme, effet: "Partage les dégâts subis par une cible avec le boss et la soigne" }
+  - { nom: Coup d'oeil, effet: "Tous les ennemis : poison + baisse de résistances" }
+  - { nom: Bien vu l'Aveugle, effet: "Boost ses alliés" }
+mecaniques:
+  - { nom: Mort d'un monstre, declencheur: chaque monstre tué, effet: "Toute l'équipe : -1 PA, -1 PM, 50 % d'érosion 1 tour, ~500 dégâts ; le boss -10 % de résistances" }
+strategie:
+  - Aller au corps à corps (il ne bouge pas)
+  - Doser les kills de monstres (malus d'équipe)
+alertes:
+  - { quand: mort_monstre, texte: "Monstre mort : -1 PA/PM et érosion pour tous", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14055/boyau-pere-ver]

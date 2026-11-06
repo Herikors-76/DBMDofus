@@ -1,0 +1,29 @@
+id: willorque
+nom: Willorque
+type: raid_guilde
+contenu: Gouffre du Gigalodon (étage -6)
+niveau: 200
+joueurs: { max: 12 }
+pv: 62000
+enracine: true   # ni poussée ni échange ; seul le Pandawa peut le porter
+invocations:
+  - { nom: Poisson Lanterne, nombre: 10, pv: 550000, resistances: "200 %", tuable: false }
+jauges:
+  - nom: Light Count
+    regle: +10 % par lanterne allumée ; plus la lumière est basse, plus ses sorts sont forts
+phases:
+  - seuil_pv: 43400
+    effet: Random Fish éteint toutes les lanternes, Light Count = 0 %
+sorts:
+  - nom: C'est assez
+    effet: +1 à 10 PM selon le Light Count ; invisible si Light Count ≤ 40 % ; applique Switch
+  - nom: Écholok
+    effet: 950 feu sur une cible à 5 PO maximum, avec Switch
+  - nom: Sombre Chant
+    effet: Feu en cercle de taille 10, de 500 à 1 500 selon le Light Count
+alertes:
+  - { quand: { evenement: seuil_pv, valeurs: [43400] }, texte: "Willorque : lanternes éteintes, rallumez !", niveau: critique }
+  - { quand: { evenement: debut_tour_boss }, texte: "Lumière basse = Sombre Chant plus fort", niveau: important }
+recompenses: [Noirceur de Willorque (10 000 pts)]
+fiabilite: source_unique
+sources: [https://www.dofuspourlesnoobs.com/gouffre-du-gigalodon.html]

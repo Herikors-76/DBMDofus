@@ -1,0 +1,22 @@
+id: chene_mou
+nom: Chêne Mou
+type: donjon
+contenu: Clairière du Chêne Mou
+niveau: 140
+position: "-14,-43"
+pv: "7800-11000"
+sorts:
+  - { nom: Embranchement du Chêne Mou, effet: "Si aligné : terre + retrait de PA" }
+  - { nom: Tornade de Branches, effet: "Au contact : air + repousse les voisins" }
+  - { nom: Enracinement, effet: "Au contact : eau + votre tour suivant annulé" }
+  - { nom: Attirance Sylvestre, effet: "Ligne 12 PO : vous ramène au contact" }
+  - { nom: Complicité, effet: "Alliés +200 puissance, +50 % critique" }
+mecaniques:
+  - { nom: Branche Soignante, declencheur: son tour, effet: "Le soigne" }
+strategie:
+  - Gros burst ou Insoignable contre la Branche Soignante
+  - Ni aligné ni au contact
+alertes:
+  - { quand: fin_tour_joueur, texte: "Pas aligné avec le Chêne Mou", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13754/donjon-chene-mou]

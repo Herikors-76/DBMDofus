@@ -1,0 +1,21 @@
+id: skeunk
+nom: Skeunk
+type: donjon
+contenu: Repaire du Skeunk
+niveau: 120
+position: "-20,10"
+pv: "4700-6900"
+sorts:
+  - { nom: Chant Foudroyant, effet: "Feu en cercle de 2, portée 0-10" }
+  - { nom: Chant Immobilisant, effet: "-4 PM, portée 1-10" }
+  - { nom: Chant Stimulant, effet: "+2 PA (érosion sur lui)" }
+  - { nom: Chant Régénérant / de Jouvence, effet: "Soin et désenvoûtement" }
+mecaniques:
+  - { nom: Poupée Affamée, declencheur: atteint 8 PA, effet: "Explose en feu sur toute la carte ; se nourrit des invocations" }
+strategie:
+  - Nourrir la Poupée avec vos invocations chaque tour
+  - Ne pas compter sur un seul buff (il désenvoûte)
+alertes:
+  - { quand: chaque_tour, texte: "Nourrissez la Poupée Affamée (invocation)", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13860/repaire-skeunk]

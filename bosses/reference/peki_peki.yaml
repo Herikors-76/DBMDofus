@@ -1,0 +1,22 @@
+id: peki_peki
+nom: Péki Péki
+type: donjon
+contenu: Donjon des Firefoux
+niveau: 140
+position: "26,-45"
+pv: "7700-11000"
+etats: [100 % de résistance feu]
+sorts:
+  - { nom: Transpékisation, effet: "Air + échange avec vous + invisibilité, chaque tour" }
+  - { nom: Piaillement, effet: "Poison air sur toute la carte, 5 tours" }
+  - { nom: Kroutage / Pékisation, effet: "Corps à corps avec poussée ou vol de vie" }
+mecaniques:
+  - { nom: Fuite, declencheur: après son attaque, effet: "Fuit vers le fond de la carte" }
+  - { nom: Pesanteur, declencheur: Pesanteur appliquée, effet: "Ne peut plus devenir invisible" }
+strategie:
+  - Pesanteur dès que possible
+  - Pas de feu
+alertes:
+  - { quand: debut_tour_boss, texte: "Pesanteur sur le Péki Péki", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13887/donjon-firefoux]

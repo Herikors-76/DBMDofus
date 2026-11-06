@@ -1,0 +1,24 @@
+id: klime
+nom: Klime
+type: donjon
+contenu: Salons Privés de Klime
+niveau: 200
+position: "-63,-86 (Château du Comte)"
+pv: "13000-19000"
+etats: [Invulnérable]
+sorts:
+  - { nom: Cuir à feu doux, effet: "Retour à sa position de début de tour, -6 PM, +100 tacle et +300 dommages à ses alliés" }
+  - { nom: Cuir moustache, effet: "À distance sans ligne de vue, attire de 7, poison feu 3 tours" }
+  - { nom: Moustacheron, effet: "Corps à corps : feu, air en vol de vie, neutre = 10 % des PV manquants" }
+mecaniques:
+  - { nom: Vulnérabilité, declencheur: allié poussé sur Klime, effet: "Les dommages de poussée lui retirent l'invulnérabilité 1 tour" }
+  - { nom: Glyphes, declencheur: dès le tour 3, effet: "Sous les cases de début/fin de tour des monstres ; finir son tour dessus évite Pacifiste" }
+strategie:
+  - Pousser un allié sur Klime
+  - Finir chaque tour sur un glyphe
+  - Limiter le nombre de monstres (moins de glyphes)
+alertes:
+  - { quand: fin_tour_joueur_des_tour_3, texte: "Finis ton tour sur un glyphe", niveau: critique }
+  - { quand: etat_invulnerable, texte: "Poussez un allié sur Klime", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14656/salons-prives-klime]

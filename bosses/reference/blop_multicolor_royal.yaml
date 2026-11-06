@@ -1,0 +1,18 @@
+id: blop_multicolor_royal
+nom: Blop Multicolore Royal
+type: donjon
+contenu: Antre du Blop Multicolore Royal
+niveau: 120
+position: "-7,-43"
+pv: "3400-5000"
+sorts:
+  - { nom: Blopoutrage Royal, effet: "Air, eau, feu, terre en vol de vie + vol de PM" }
+  - { nom: Blopagation, effet: "Insoignable sur tous les ennemis 1 tour" }
+  - { nom: Blopacification, effet: "Boost les dégâts du boss et de ses alliés" }
+strategie:
+  - Résistances ou soins
+  - Éviter le corps à corps prolongé
+alertes:
+  - { quand: sort_lance, sort: Blopagation, texte: "Insoignables ce tour : protégez-vous", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13771/donjon-blops-antre-blop-multicolore]

@@ -1,0 +1,22 @@
+id: kralamoure_geant
+nom: Kralamoure Géant
+type: donjon
+contenu: Antre du Kralamoure Géant
+niveau: 180
+position: "-60,-8"
+etats: [900 % de résistances dans tous les éléments]
+sorts:
+  - { nom: Kracheau immobilisant, effet: "Vol de vie, 700 à 1 500, affaiblit" }
+  - { nom: Kraken, effet: "+200 PV par tour" }
+  - { nom: Vulnérabilité de la Tourbière, effet: "Retire ses résistances ; vous gagnez +2 PM, 63 PO et 8 000 dégâts fixes pendant 2 tours" }
+mecaniques:
+  - { nom: Tentacules, declencheur: frapper le boss dans l'élément de chaque tentacule, effet: "Invoque les tentacules eau, feu, terre, air" }
+  - { nom: Vulnérabilité, declencheur: les 4 tentacules lancent leur sort le MÊME tour, effet: "Active Vulnérabilité de la Tourbière" }
+strategie:
+  - Retenir les tentacules (Pandawasta, Arbres) et les placer un par un
+  - Enutrof quasi indispensable (portée, lignes de vue)
+alertes:
+  - { quand: tentacules_invoques, texte: "Les 4 sorts de tentacules dans le même tour", niveau: critique }
+  - { quand: vulnerabilite_active, texte: "Immobilisez le Tentacule Primaire", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13868/antre-kralamoure-geant]

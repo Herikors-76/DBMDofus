@@ -1,0 +1,17 @@
+id: sapik
+nom: Sapik
+type: donjon
+contenu: Donjon de Nowel
+niveau: 50
+position: "-32,-89 (Île de Nowel)"
+sorts:
+  - { nom: Enguirlandage, effet: "2 à 63 PO, ligne de vue, 10 à 70 en critique, malus d'échecs critiques 4 tours" }
+  - { nom: Kokapik, effet: "Invoque Kipik et Pokipik (ces derniers peuvent aider les ennemis)" }
+mecaniques:
+  - { nom: Renvoi, declencheur: chaque coup reçu, effet: "Renvoie 5 à 20 dégâts" }
+strategie:
+  - Éviter les attaques multi-lignes au corps à corps
+alertes:
+  - { quand: avant_attaque_boss, texte: "Renvoi : peu de coups, mais gros", niveau: info }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13893/donjon-nowel]

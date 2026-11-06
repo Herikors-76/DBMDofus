@@ -1,0 +1,19 @@
+id: koulosse
+nom: Koulosse
+type: donjon
+contenu: Caverne du Koulosse
+niveau: 100
+position: "-7,8"
+pv: "5800-8600"
+sorts:
+  - { nom: Souffle du Koulosse, effet: "-100 PA, cible en Boufcool 1 tour ; 3 fois par tour" }
+  - { nom: Appel du Koulosse, effet: "Attire de 10" }
+  - { nom: Calumet de la paix, effet: "+5 PM et bonus pour lui" }
+  - { nom: Invocation de Bouftou des Cavernes, effet: "Les Bouftous deviennent des Boufcoul (invisibles)" }
+strategie:
+  - Rester à distance derrière des obstacles
+  - Pièges/glyphes contre les Bouftous invisibles
+alertes:
+  - { quand: fin_tour_joueur, texte: "Hors de vue du Koulosse (attraction de 10)", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13859/donjon-koulosse]

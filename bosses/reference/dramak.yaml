@@ -1,0 +1,20 @@
+id: dramak
+nom: Dramak
+type: donjon
+contenu: Théâtre de Dramak
+niveau: 100
+position: "21,7"
+pv: 2100
+etats: [Invulnérable]
+sorts:
+  - { nom: Marionnette, effet: "Tous les 3 tours : -100 PA et -100 PM à une cible" }
+  - { nom: Entracte, effet: "Feu, repousse en diagonale" }
+  - { nom: Invocation de Pantin, effet: "Tous les 3 tours" }
+mecaniques:
+  - { nom: Vulnérabilité, declencheur: coup d'ARME sur un allié collé à Dramak, effet: "Lève l'invulnérabilité (un compagnon ne marche pas)" }
+strategie:
+  - Au moins 2 joueurs
+alertes:
+  - { quand: etat_invulnerable, texte: "Coup d'arme sur l'allié collé à Dramak", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/11585/theatre-dramak]

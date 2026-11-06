@@ -1,0 +1,20 @@
+id: silf_le_rasboul_majeur
+nom: Silf le Rasboul Majeur
+type: donjon
+contenu: Goulet du Rasboul
+niveau: 110
+position: "-51,9"
+pv: "7000-10000"
+etats: [Invulnérable jusqu'à Hololole]
+mecaniques:
+  - { nom: Hololole, declencheur: atteint 14 PA, effet: "Perd l'invulnérabilité ; un seul élément devient efficace" }
+  - { nom: Gain de PA, declencheur: Briss Deuniss (Kilibriss) ou tentative de retrait PA, effet: "Il gagne des PA" }
+  - { nom: Recrutement, declencheur: chaque tour, effet: "Invoque des Rasboul Mineur qui soignent" }
+  - { nom: Modération, declencheur: sort, effet: "Vol de vie tous éléments + échange" }
+strategie:
+  - Tuer les Rasboul Mineur en priorité
+  - Ne pas lui retirer de PA
+alertes:
+  - { quand: sort_lance, sort: Hololole, texte: "Silf vulnérable : trouvez le bon élément", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13865/goulet-rasboul]

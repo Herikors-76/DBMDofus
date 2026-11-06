@@ -1,0 +1,17 @@
+id: bworker
+nom: Bworker
+type: donjon
+contenu: Grotte du Bworker
+niveau: 180
+position: "-15,14"
+mecaniques:
+  - { nom: Corps à corps, declencheur: permanent, effet: "Boss très fort au contact" }
+  - { nom: Mama Bwork, declencheur: son tour, effet: "Rend tous ses PV à sa cible" }
+strategie:
+  - Ne jamais laisser le Bworker au contact
+  - Tuer la Mama Bwork en priorité
+alertes:
+  - { quand: debut_tour_boss, texte: "Gardez le Bworker à distance", niveau: important }
+fiabilite: source_unique
+completude: partielle
+sources: [https://dofus.jeuxonline.info/article/13853/grotte-bworker]

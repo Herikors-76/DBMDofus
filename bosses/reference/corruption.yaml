@@ -1,0 +1,9 @@
+id: corruption
+nom: Corruption
+type: donjon
+contenu: Arbre de Mort (Cavaliers de l'Éliocalypse, màj 2.54)
+niveau: 200
+position: "?"
+completude: a_completer   # page JOL inaccessible au relevé, aucune autre source trouvée
+fiabilite: a_verifier
+sources: [https://dofus.jeuxonline.info/article/14863/arbre-mort, https://www.millenium.org/guide/352032.html]

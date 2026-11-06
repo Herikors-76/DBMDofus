@@ -1,0 +1,24 @@
+id: dantinea
+nom: Dantinéa
+type: donjon
+contenu: Palais de Dantinéa
+niveau: 200
+position: "19,26"
+pv: "18000-26000"
+sorts:
+  - { nom: Siphon d'Âme, effet: "Neutre en vol de vie, portée 3 fixe, ligne de vue" }
+  - { nom: Danse Tentaculaire, effet: "Terre en zone autour d'elle" }
+  - { nom: Cooquillation, effet: "Échange avec un coquillage, portée 6, tous les 2 tours (dès le tour 2)" }
+mecaniques:
+  - { nom: Coquillages, declencheur: tous les 5 tours, effet: "1 coquillage de 1 000 PV par perso (dégâts reçus /2) ; tant qu'ils vivent, les monstres ne prennent pas de dégâts" }
+  - { nom: Pénalité, declencheur: chaque tour avec un coquillage vivant, effet: "-1 PM cumulable" }
+  - { nom: Exécution, declencheur: coquillage encore vivant à la réinvocation, effet: "Le perso est tué" }
+strategie:
+  - Rester loin de Dantinéa
+  - Tuer TOUS les coquillages avant la réinvocation (y compris ceux des alliés)
+  - Choisir son placement de départ selon le côté d'invocation
+alertes:
+  - { quand: tous_les_5_tours, texte: "Réinvocation : tuez tous vos coquillages !", niveau: critique }
+  - { quand: debut_tour, texte: "Coquillage vivant = -1 PM", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14658/palais-dantinea]

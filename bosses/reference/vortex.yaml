@@ -1,0 +1,28 @@
+id: vortex
+nom: Vortex
+type: donjon
+contenu: Œil de Vortex
+niveau: 200
+position: "1,1 (Xélorium)"
+pv: "15000-22000"
+sorts:
+  - { nom: En temps et en heure, effet: "Début de son tour : très gros dégâts terre aux adversaires alignés + 20 % d'érosion 2 tours" }
+  - { nom: Contamination zombie, effet: "1 à 63 PO, rend la cible insoignable" }
+  - { nom: Heuristique, effet: "1 à 2 PO en ligne, désenvoûte 2 tours, Pacifiste, air + feu" }
+  - { nom: Morfaille, effet: "1 à 4 PO, renvoie la cible à sa position précédente, neutre + eau + terre (20 % des PV érodés du lanceur)" }
+mecaniques:
+  - { nom: Auroraire, declencheur: certains tours, effet: "Le Vortex se téléporte sur l'Auroraire et devient vulnérable, avec les bonus de Heurage" }
+  - { nom: Corruption, declencheur: mort d'un monstre, effet: "Tué 2 fois à la même heure = corrompu (invulnérable, hors tour) ; le Vortex doit mourir en dernier" }
+  - { nom: Zombie, declencheur: mort d'un monstre, effet: "Revient au tour du Vortex en Zombie avec la moitié de ses PV" }
+  - { nom: Glyphes, declencheur: début du tour des monstres, effet: "Glyphe = envoûtement d'1 tour selon le monstre (Méjaire soin, Ikargn +1 PM, Harpille +200 puissance, Brabuzar +200 dommages de poussée, Buboxor -50 % dégâts subis)" }
+  - { nom: Heurage, declencheur: mort des monstres pendant la vulnérabilité, effet: "Bonus selon l'heure de l'Auroraire (critique, stats, PA, PM, réduction, intaclable)" }
+strategie:
+  - Corrompre chaque monstre (2 morts à la même heure), puis finir le Vortex
+  - Régler l'heure avec l'Auroraire avant chaque mort
+  - S'éloigner de l'Auroraire avant la téléportation du Vortex
+alertes:
+  - { quand: debut_tour_boss, texte: "Pas aligné avec le Vortex (terre + érosion)", niveau: critique }
+  - { quand: mort_monstre, texte: "Vérifiez l'heure de l'Auroraire", niveau: info }
+  - { quand: debut_combat, texte: "Le Vortex se tue en dernier", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13603/donjon-vortex]

@@ -1,0 +1,27 @@
+id: misere
+nom: Misère
+type: donjon
+contenu: Sentence de la Balance
+niveau: 200
+position: "1,0 (Désert de Misère)"
+pv: "18000-26000"
+etats: [Invulnérable jusqu'au début de son 2e tour]
+sorts:
+  - { nom: Balance-Fléau, effet: "1 à 6 PO en ligne, vole 200 puissance, tous éléments sauf neutre" }
+  - { nom: Funérailles Célestes, effet: "4 à 8 PO sans ligne de vue, tous les 3 tours, échange + air ; seulement sur sa monture" }
+  - { nom: Grand Urubu, effet: "1 à 2 PO en ligne, neutre, -résistance poussée 2 tours, poussée de 6" }
+  - { nom: Dakhma, effet: "1 à 2 PO, tous les 2 tours, feu, -100 PA/PM, invulnérable 1 tour, téléporte la cible" }
+  - { nom: Barchan, effet: "1 à 6 PO, 3 fois par tour, eau en vol de vie, -50 % de soins 1 tour" }
+mecaniques:
+  - { nom: Charogne, declencheur: mort d'une entité, effet: "Dépouille ; un monstre à 1-4 cases la mange pour +1 500 PV" }
+  - { nom: Collecte, declencheur: permanent, effet: "Vol de 200 puissance cumulable à l'infini" }
+  - { nom: Faim du Monde, declencheur: début de chaque tour, effet: "Monstres +4 PM" }
+strategie:
+  - Attendre son 2e tour pour la frapper
+  - Surveiller les dépouilles
+alertes:
+  - { quand: debut_combat, texte: "Misère invulnérable jusqu'à son 2e tour", niveau: critique }
+  - { quand: mort_entite, texte: "Dépouille : éloignez les monstres", niveau: important }
+  - { quand: sort_lance, sort: Dakhma, texte: "Dakhma : invulnérable 1 tour", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14864/sentence-balance]

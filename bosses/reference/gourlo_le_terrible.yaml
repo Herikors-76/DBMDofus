@@ -1,0 +1,20 @@
+id: gourlo_le_terrible
+nom: Gourlo le Terrible
+type: donjon
+contenu: Arche d'Otomaï
+niveau: 70
+position: "-55,4"
+pv: "1900-2700"
+etats: [200 % de résistances dans tous les éléments]
+sorts:
+  - { nom: Invocation de Tonneau, effet: "Tonneau d'élément aléatoire" }
+  - { nom: Un gros boulet sur un autre boulet, effet: "Feu à distance, zone de 2" }
+  - { nom: Bombarde, effet: "Feu au contact, -critiques" }
+mecaniques:
+  - { nom: Tonneaux, declencheur: Gourlo collé à un tonneau, effet: "Ex. tonneau Eau : Rhum fourbe, -200 % de résistance eau aux créatures au contact (cumulable)" }
+strategie:
+  - Coincer Gourlo au contact des tonneaux de vos éléments
+alertes:
+  - { quand: tonneau_invoque, texte: "Collez Gourlo au tonneau de votre élément", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/9858/gourlo-terrible-arche-otomai]

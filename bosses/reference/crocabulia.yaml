@@ -1,0 +1,19 @@
+id: crocabulia
+nom: Crocabulia
+type: donjon
+contenu: Antre de Crocabulia
+niveau: 120
+position: "-2,25"
+pv: "7000-10000"
+sorts:
+  - { nom: Cri de Crocabulia, effet: "Cercle de 8 : renvoie des dégâts à ses alliés, qui gagnent de la puissance 2 tours" }
+  - { nom: Coquillement, effet: "Invoque une coquille qui explose après 5 tours (énormes dégâts)" }
+  - { nom: Souffle de Crocabulia, effet: "Ligne de 3, gros feu, poussée de 5" }
+  - { nom: Appel de Crocabulia, effet: "Invoque un monstre du donjon au hasard" }
+strategie:
+  - Surveiller la Dragueuse (gros retraits de PA)
+  - Dégâts terre
+alertes:
+  - { quand: coquille_tour_4, texte: "Coquille : explosion au prochain tour", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13761/sanctuaire-donjon-dragoeufs]

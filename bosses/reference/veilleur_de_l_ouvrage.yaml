@@ -1,0 +1,30 @@
+id: veilleur_de_l_ouvrage
+nom: Veilleur de l'Ouvrage
+type: raid_guilde
+contenu: Sanctuaire des Jardins éternels (gardien 1)
+joueurs: { max: 4 }   # par combat, raid de 8 à 16
+etats_initiaux: [Invulnérable, Lourd]
+accompagnants: [Tritulipe, Muguégide, Dahliane, Fracamélia]
+mecaniques:
+  - nom: Levée d'invulnérabilité
+    effet: Tuer EN PREMIER le monstre qui correspond à la statue de l'énigme du Clos ; une erreur termine le combat et coûte des PV de raid
+    bonus: Veilleur +20 % de dégâts subis, compagnons +10 %, pour le reste du combat
+  - nom: Protection récurrente
+    declencheur: tous les 2 tours
+    effet: -40 % de dégâts subis et Indéplaçable sur un allié pendant 1 tour (désenvoûtable)
+sorts:
+  - { nom: Blindéfense, effet: "Indéplaçable + 40 % de réduction des dégâts, 1 tour ; portée 6, relance 2 tours" }
+  - { nom: Cuiracine, effet: "750 air en vol de vie + vol de résistances ; portée 7, 3 fois par tour" }
+  - { nom: Pyroche, effet: "1 100 feu + gain de bouclier ; portée 4, 1 fois par tour" }
+  - { nom: Pytholithe, effet: "Échange de place avec un allié + bouclier ; ligne 2 à 5, 2 fois par tour" }
+  - { nom: Sédiaimant, effet: "Attire, puis 1 250 terre en vol de vie en cercle de taille 2 ; relance 2 tours" }
+strategie:
+  - Équiper un Prymune
+  - Désenvoûter Blindéfense, surtout sur la cible principale
+  - Rester à distance une fois les monstres morts (il perd ses déplacements rapides)
+alertes:
+  - { quand: { evenement: debut_combat }, texte: "Tuez d'abord le monstre de la statue du Clos !", niveau: critique }
+  - { quand: { evenement: tous_les_n_tours, n: 2 }, texte: "Blindéfense : désenvoûtez", niveau: important }
+memoire_raid_requise: [statue_enigme_clos]
+fiabilite: source_unique
+sources: [https://www.dofuspourlesnoobs.com/sanctuaire-des-jardins-eternels.html]

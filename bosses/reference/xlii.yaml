@@ -1,0 +1,21 @@
+id: xlii
+nom: XLII
+type: donjon
+contenu: Horologium de XLII (dimension Xélorium)
+niveau: 170
+position: "7,-2 (Xélorium)"
+pv: "8800-13000"
+sorts:
+  - { nom: Coquetterie, effet: "Air en cercle de 2, -1 tour d'envoûtement, portée 0-1" }
+  - { nom: Souffle démoniaque, effet: "Gros dégâts eau + Pacifiste 1 tour, portée 1-3" }
+  - { nom: Dérèglement, effet: "Échange avec un Hordémon s'il a été déplacé" }
+mecaniques:
+  - { nom: Auroraire, declencheur: chaque tour d'un allié, effet: "Le cadran avance : +10 % de dégâts pour tous ; au départ vos dégâts sont à 40 % ; disparaît à la mort de XLII" }
+  - { nom: Vagues, declencheur: vague vidée, effet: "Vague suivante invulnérable jusqu'à son 1er tour" }
+strategie:
+  - Tuer XLII en 1 ou 2 tours
+  - Temporiser la 1re vague
+alertes:
+  - { quand: debut_combat, texte: "Dégâts réduits au départ : boostez-vous", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14663/horologium-xlii]

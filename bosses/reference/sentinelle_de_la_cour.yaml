@@ -1,0 +1,41 @@
+id: sentinelle_de_la_cour
+nom: Sentinelle de la Cour
+type: raid_guilde
+contenu: Sanctuaire des Jardins éternels (gardien 4)
+joueurs: { max: 4 }
+etats_initiaux: [Invulnérable, Lourd]
+invocations:
+  - { nom: Obélisque Ambré, element: terre, pv: 5000, seuil_pv: 1 }
+  - { nom: Obélisque Azuré, element: eau, pv: 5000, seuil_pv: 1 }
+  - { nom: Obélisque Viridine, element: air, pv: 5000, seuil_pv: 1 }
+  - { nom: Obélisque Écarlate, element: feu, pv: 5000, seuil_pv: 1 }
+mecaniques:
+  - nom: Bon obélisque
+    effet: Amener à 1 PV l'obélisque de la couleur de l'énigme de l'Ouvrage Monochrome ; erreur = fin du combat + PV de raid perdus
+    indice_secours: L'élément de Chromage/Kaléidos donne la couleur (feu Écarlate, eau Azuré, air Viridine, terre Ambré)
+  - nom: Glyphe d'obélisque
+    effet: L'obélisque au seuil devient invulnérable et pose un glyphe 3×3 de sa couleur ; la Sentinelle n'est vulnérable que DANS ce glyphe
+    compromis: Alliés dans le glyphe +5 % de dégâts finaux, mais frappés plus fort
+  - nom: Attraction de l'obélisque
+    effet: À son tour, l'obélisque au seuil attire en ligne/diagonale jusqu'à 6 cases
+  - nom: Téléportation
+    declencheur: tous les 2 tours
+    effet: Se téléporte vers l'allié le plus proche (obélisques compris)
+sorts:
+  - { nom: Chromage, effet: "-200 dommages critiques en cercle de taille 2, 1 200 dans l'élément de l'énigme (+1 200 dans le glyphe) ; relance 3 tours" }
+  - { nom: Floriforce, effet: "+20 % critique et +300 puissance pour elle et ses alliés, 3 tours (désenvoûtable) ; relance 4 tours" }
+  - { nom: Kaléidos, effet: "900 dans l'élément de l'énigme (+900 dans le glyphe) ; portée 4, 2 fois par tour" }
+  - { nom: Omniflore, effet: "150 dans les 4 éléments ; portée 2 à 8 sans ligne de vue, 3 fois par tour" }
+  - { nom: Tétrastyle, effet: "Téléportation près de l'allié le plus proche, 1 100 neutre en cercle de taille 2, +100 dommages critiques pendant 1 tour ; relance 2 tours" }
+strategie:
+  - Équiper un Prymune pour tenir le tour 1
+  - Les obélisques ont plus d'initiative : tuer 2 ou 3 monstres avant qu'ils jouent
+  - Désenvoûter Floriforce
+  - Sortir du glyphe avant de finir son tour
+alertes:
+  - { quand: { evenement: debut_combat }, texte: "Obélisque de la couleur de l'énigme UNIQUEMENT", niveau: critique }
+  - { quand: { evenement: fin_tour_joueur }, texte: "Sors du glyphe d'obélisque", niveau: important }
+  - { quand: { evenement: sort_lance, sort: Floriforce }, texte: "Floriforce : désenvoûtez", niveau: important }
+memoire_raid_requise: [couleur_enigme_ouvrage]
+fiabilite: source_unique
+sources: [https://www.dofuspourlesnoobs.com/sanctuaire-des-jardins-eternels.html]

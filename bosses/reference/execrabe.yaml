@@ -1,0 +1,33 @@
+id: execrabe
+nom: Exécrabe
+type: raid_guilde
+contenu: Gouffre du Gigalodon (étage -4)
+niveau: 200
+joueurs: { max: 12 }
+pv: 100000
+immobile: true
+phases:
+  seuils_pv: [80000, 60000, 40000, 20000]
+  regle: À chaque seuil, il change d'apparence ; l'ordre des apparences est aléatoire
+  apparences:
+    - { nom: Coquillage, effet: "Bouclier de 5 000" }
+    - { nom: Oursin, effet: "Renvoie 20 % des dégâts" }
+    - { nom: Perle, effet: "Retire 63 PO pendant 2 tours" }
+    - { nom: Poulpe, effet: "Attire les joueurs en ligne et en diagonale" }
+sorts:
+  - nom: Bisque
+    effet: Change d'élément et de zone selon l'apparence active
+strategie:
+  - Tuer les monstres, puis retirer ses PM
+  - NOTER l'ordre des apparences, il sert pour l'énigme qui suit
+enigme:
+  description: Cliquer les statues dans le même ordre que les apparences
+  penalite: -1 000 points par erreur
+alertes:
+  - { quand: { evenement: seuil_pv, valeurs: [80000, 60000, 40000, 20000] }, texte: "Exécrabe : nouvelle apparence, notez-la (énigme)", niveau: critique }
+  - { quand: { evenement: apparence, valeur: Oursin }, texte: "Oursin : 20 % de renvoi, dosez les dégâts", niveau: important }
+  - { quand: { evenement: apparence, valeur: Poulpe }, texte: "Poulpe : attraction en ligne/diagonale", niveau: important }
+memoire_raid: [ordre_apparences]   # donnée à conserver pour l'énigme
+recompenses: [Rancune d'Exécrabe (5 000 pts), Pince d'Exécrabe (raccourci)]
+fiabilite: source_unique
+sources: [https://www.dofuspourlesnoobs.com/gouffre-du-gigalodon.html]

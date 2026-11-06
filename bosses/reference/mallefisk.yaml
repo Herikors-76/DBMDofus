@@ -1,0 +1,22 @@
+id: mallefisk
+nom: Malléfisk
+type: donjon
+contenu: Fabrique de Malléfisk (dimension Énutrosor)
+niveau: 100
+position: "-6,-2 (Énutrosor)"
+pv: "3700-5300"
+sorts:
+  - { nom: Ka Dabor, effet: "~120 air en ligne, -2 PM" }
+  - { nom: Chté Hu !, effet: "Échange, 100 eau" }
+  - { nom: Nonoube Noharnak, effet: "Tous les 5 tours : feu selon son érosion, retire Ofranor et le relance sur lui" }
+mecaniques:
+  - { nom: Ofranor, declencheur: coup reçu, effet: "Bonus de puissance pour le frappeur et Malléfisk" }
+  - { nom: Bouclier, declencheur: sous 50 % PV, effet: "+500 bouclier par coup reçu" }
+strategie:
+  - Coups de plus de 500
+  - Le garder pour la fin
+alertes:
+  - { quand: tous_les_5_tours, texte: "Nonoube Noharnak", niveau: important }
+  - { quand: seuil_pv, valeurs: ["50 %"], texte: "Gros coups uniquement (+500 bouclier par coup)", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13697/donjon-fabrique-mallefisk, https://www.millenium.org/guide/158595.html]

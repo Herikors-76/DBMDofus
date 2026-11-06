@@ -1,0 +1,20 @@
+id: roi_imagami
+nom: Roi Imagami
+type: donjon
+contenu: Mémoire d'Orukam
+niveau: 200
+position: "-3,-1 (Royaume d'encre)"
+pv: "27000-38000"
+sorts:
+  - { nom: (non détaillés), effet: "Très courte portée terre et neutre ; retraits de PM, de fuite, érosion" }
+mecaniques:
+  - { nom: Lotus, declencheur: "80 %, 50 %, 25 % de PV", effet: "Invulnérable et enraciné 5 tours" }
+  - { nom: Reine Amirukam, declencheur: chaque Lotus, effet: "Invoquée, contrôlable par un joueur 5 tours max" }
+  - { nom: Bonus monstres, declencheur: pendant le Lotus, effet: "Les autres monstres ont +13 500 PV" }
+strategie:
+  - Prévoir ~69 000 dégâts à 4 joueurs (moins s'il est rendu insoignable)
+  - Rester à distance (il frappe de très près)
+alertes:
+  - { quand: seuil_pv, valeurs: ["80 %", "50 %", "25 %"], texte: "Lotus : prenez la Reine Amirukam", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14925/memoire-orukam-pandala-iii-dofus-258]

@@ -1,0 +1,22 @@
+id: capitaine_ekarlate
+nom: Capitaine Ékarlatte
+type: donjon
+contenu: Ring du Capitaine Ékarlatte (dimension Srambad)
+niveau: 130
+position: Srambad
+pv: "5700-8200"
+sorts:
+  - { nom: Case départ, effet: "Retire des PA" }
+  - { nom: Tourbilaule, effet: "Attire tous les ennemis" }
+  - { nom: Dansorcellement, effet: "-PM, échange + Pesanteur" }
+  - { nom: Enfumage, effet: "Téléportation, -100 puissance en zone" }
+mecaniques:
+  - { nom: Déplacement, declencheur: dégâts sur le boss, effet: "Il change de place" }
+  - { nom: Vagues, declencheur: vague vidée, effet: "Vague suivante" }
+strategie:
+  - Kartouche en priorité (Tir Progressif)
+  - Nettoyer vite les vagues
+alertes:
+  - { quand: debut_combat, texte: "Focus Kartouche", niveau: info }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14671/ring-capitaine-ekarlatte]

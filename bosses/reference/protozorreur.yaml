@@ -1,0 +1,24 @@
+id: protozorreur
+nom: Protozorreur
+type: donjon
+contenu: Ventre de la Baleine
+niveau: 200
+position: "-85,-59"
+pv: 1000
+objectif: Le garder 10 tours consécutifs sur son glyphe (état Infecté) pour qu'il disparaisse
+sorts:
+  - { nom: Infection, effet: "Tue les invocations au contact ; non infecté : zone de 4, poussée de 3, 20 % d'érosion ; infecté : eau sur toute la carte = 50 % des PV érodés" }
+  - { nom: Jet Proto, effet: "Air ; non infecté : +5 dommages cumulables, 2 fois par tour ; infecté : 1 à 10 PO, attire au contact" }
+  - { nom: Électrocution, effet: "Feu sans ligne de vue ; non infecté : -6 PM ; infecté : -6 PA" }
+mecaniques:
+  - { nom: Malamibe, declencheur: début du combat puis à chaque mort, effet: "2 000 PV par adversaire vivant, intercepte les dégâts ; à tuer en moins de 2 tours sinon toute l'équipe meurt" }
+  - { nom: Glyphe, declencheur: le boss frappe un adversaire, effet: "Glyphe sous la cible 3 tours ; un seul perso aligné (le premier qui frappe) peut l'attirer par tour" }
+strategie:
+  - Lui retirer des PM, le garder pour la fin
+  - Le replacer sur le glyphe tous les 2 tours
+alertes:
+  - { quand: malamibe_invoquee, texte: "Malamibe : tuez-la en moins de 2 tours !", niveau: critique }
+  - { quand: tous_les_2_tours, texte: "Replacez le Protozorreur sur le glyphe", niveau: important }
+compteurs: [{ nom: tours_sur_glyphe, cible: 10 }]
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14644/ventre-baleine]

@@ -1,0 +1,21 @@
+id: sphincter_cell
+nom: Sphincter Cell
+type: donjon
+contenu: Donjon des Rats du Château d'Amakna
+niveau: 150
+position: "5,-8"
+pv: "6400-9300"
+accompagnants: [Rat Blanc, Rat Noir]
+sorts:
+  - { nom: Mutagen, effet: "Invoque une tortue d'élément aléatoire" }
+  - { nom: Raccourci, effet: "Téléportation, portée 1-5" }
+  - { nom: Rasoir, effet: "Tous éléments en vol de vie, portée 1-2" }
+mecaniques:
+  - { nom: Tortues, declencheur: tortue qui commence son tour au contact du boss, effet: "-200 % de résistance dans son élément pendant 3 tours (Raphaela eau, Donatella air, Michelangela terre, Leonardawa feu)" }
+strategie:
+  - Mettre boss et tortue au contact, tacler la tortue
+  - Garder un désenvoûteur (Kackitu du Rat Noir)
+alertes:
+  - { quand: tortue_invoquee, texte: "Collez la tortue au boss", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13882/donjon-rats-amakna]

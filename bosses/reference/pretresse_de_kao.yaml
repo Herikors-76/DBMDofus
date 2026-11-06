@@ -1,0 +1,25 @@
+id: pretresse_de_kao
+nom: Prêtresse de Kao
+type: donjon
+contenu: Temple du Dieu Kao
+niveau: 190
+position: "-1,-10 (Île de Pwâk)"
+pv: 18000
+etats: [Invulnérable tant que l'état chiffré n'est pas à 3]
+sorts:
+  - { nom: Cloches du Kao, effet: "Neutre à tous les adversaires un tour sur deux ; +50 par entité Chocolathée" }
+  - { nom: Equador, effet: "Cercle inversé de 6 : soigne de 10 % et booste ses alliés" }
+  - { nom: Commerce Inéquitable, effet: "Neutre à distance, 3 fois par tour, vole 2 PM" }
+  - { nom: Spatule Tranche-Gourmands, effet: "Air en ligne, -50 fuite 1 tour" }
+mecaniques:
+  - { nom: Compteur Éclat Kao, declencheur: mort d'un Éclat Kao, effet: "+1 état chiffré ; à 3, vulnérable jusqu'à la fin" }
+  - { nom: Dégâts croissants, declencheur: chaque niveau du compteur, effet: "+52 % / +74 % / +99 % de dégâts finaux" }
+strategie:
+  - Tuer l'Éclat Kao pendant son 1er tour
+  - Un seul perso en Chocolathée
+  - Tuer les 3 accompagnants avant les Éclats
+alertes:
+  - { quand: tous_les_2_tours, texte: "Cloches du Kao : tout le monde prend", niveau: important }
+  - { quand: compteur, valeur: 3, texte: "Prêtresse vulnérable, +99 % de dégâts", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14724/temple-dieu-kao]

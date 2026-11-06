@@ -1,0 +1,26 @@
+id: guerre
+nom: Guerre
+type: donjon
+contenu: Trône de Sang
+niveau: 200
+position: "4,-2 (Blessure de Guerre)"
+pv: "19000-24000"
+etats: [Invulnérable, Brave]
+sorts:
+  - { nom: Bravoure, effet: "Sur un monstre : tacle, fuite, PM et Brave. Sur un joueur : Pesanteur + Insoignable" }
+  - { nom: Lynchage, effet: "Contact, 1 fois par tour : feu puis poison 2 tours" }
+  - { nom: Impact, effet: "1 à 3 PO sans ligne de vue, si cible Brave : feu + 25 % d'érosion 2 tours" }
+  - { nom: Célérité, effet: "Échange avec l'arme la plus proche puis glyphe (~700 feu)" }
+  - { nom: Magmaléfice, effet: "1 à 6 PO, zone de 2 cases, feu" }
+  - { nom: Martyre, effet: "Contact, si cible non Brave : terre, poison feu possible" }
+mecaniques:
+  - { nom: Armes invoquées, declencheur: "après les monstres, tous les -20 % de PV", effet: "Épée (-20 %), Marteau (-40 %), Hache (-60 %, 1 000 bouclier tous les 2 tours), Morgenstern (-80 %)" }
+  - { nom: Pacifiste, declencheur: 1re attaque sur Guerre, effet: "Pacifiste pour l'attaquant" }
+strategie:
+  - Repousser Guerre pendant qu'on tue les monstres
+  - Gros dégâts en une seule attaque mono-ligne
+alertes:
+  - { quand: seuil_pv_20_pct, texte: "Nouvelle arme : sortez de sa zone", niveau: important }
+  - { quand: glyphe_celerite, texte: "Ne marchez pas sur le glyphe", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14862/trone-sang]

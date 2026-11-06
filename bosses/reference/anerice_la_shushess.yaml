@@ -1,0 +1,25 @@
+id: anerice_la_shushess
+nom: Anerice la Shushess
+type: donjon
+contenu: Manoir des Katrepat
+niveau: 200
+position: "-14,25"
+pv: "18000-26000"
+etats: ["-90 % de dégâts subis, réduction diminuée de 10 % par joueur Goule"]
+sorts:
+  - { nom: Vampyrisme, effet: "Terre en vol de vie, cercle de 2 cases, 1 à 6 PO" }
+  - { nom: Coopération, effet: "Échange sa place avec un adversaire Goule" }
+  - { nom: Appétit sanguinaire, effet: "Alliés +50 % de dégâts finaux et +2 PM 1 tour" }
+  - { nom: Goulification, effet: "Gros dégâts eau, 1 à 3 PO ; transforme la cible en Goule pour le combat (+50 % de dégâts subis)" }
+mecaniques:
+  - { nom: Téléportation, declencheur: un tour sur deux, effet: "Se téléporte au contact d'une Goule" }
+strategie:
+  - Rester à distance, retirer des PM
+  - Doser les Goules (chacune réduit sa protection mais vous fragilise)
+  - Utiliser l'érosion
+alertes:
+  - { quand: tous_les_2_tours, texte: "Évitez le contact d'une Goule (téléportation)", niveau: important }
+  - { quand: etat_goule, texte: "Nouvelle Goule : -10 % de réduction pour Anerice", niveau: critique }
+  - { quand: debut_tour_boss, texte: "Hors du cercle de Vampyrisme", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14646/manoir-katrepat]

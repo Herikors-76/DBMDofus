@@ -1,0 +1,30 @@
+id: defenseur_de_la_reserve
+nom: Défenseur de la Réserve
+type: raid_guilde
+contenu: Sanctuaire des Jardins éternels (gardien 3)
+joueurs: { max: 4 }
+etats_initiaux: [Lourd]
+accompagnants: [Tritulipe, Muguégide, Dahliane, Fracamélia]
+passifs:
+  - nom: Défenseur
+    effet: Au début de chaque tour, +5 % de dégâts finaux et +5 % de dégâts subis, cumulable 10 fois
+double_jeu:
+  condition: tous les monstres morts
+  moments: [debut_tour, apres_2_personnages]
+  note: Si les personnages entre ses deux tours meurent, il joue deux fois de suite
+sorts:
+  - { nom: Bourrasque, effet: "750 air + poussée de 4 ; en ligne jusqu'à 2, 3 fois par tour" }
+  - { nom: Cotogarde, effet: "+5 % de dégâts finaux aux alliés par cumul du passif (max 50 %), sur lui-même s'il est seul ; relance 2 tours" }
+  - { nom: Géopulsion, effet: "Téléportation jusqu'à 5 cases, 1 500 terre, poussée de 6 en croix ; portée 2 à 5, relance 3 tours" }
+  - { nom: Polypousse, effet: "280 dans les 4 éléments en ligne infinie, poussée de 2 ; portée 1, 1 fois par tour" }
+  - { nom: Transposiroc, effet: "Échange de place + retrait de la résistance aux poussées 2 tours ; dès le tour 3, portée 5, relance 3 tours" }
+strategie:
+  - Équiper un Prymune
+  - Prévoir soins/protections, il monte en puissance chaque tour
+  - Pesanteur bloque l'échange de Transposiroc mais pas Géopulsion
+alertes:
+  - { quand: { evenement: tous_monstres_morts }, texte: "Défenseur seul : il joue 2 fois par tour", niveau: critique }
+  - { quand: { evenement: debut_tour, tours_min: 3 }, texte: "Transposiroc possible (échange de place)", niveau: important }
+  - { quand: { evenement: debut_tour_boss }, texte: "Défenseur : +5 % dégâts (cumul {tour}/10)", niveau: info }
+fiabilite: source_unique
+sources: [https://www.dofuspourlesnoobs.com/sanctuaire-des-jardins-eternels.html]

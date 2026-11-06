@@ -1,0 +1,33 @@
+id: tengu_fuji_givrefoux
+nom: Tengu et Fuji Givrefoux
+type: donjon
+contenu: Tanière Givrefoux
+niveau: 170
+position: "-80,-75"
+boss:
+  - nom: Tengu Givrefoux
+    pv: "7900-12000"
+    etats: [Invulnérable]
+    sorts:
+      - { nom: Foux d'amour, effet: "Invoque un Givrefoux" }
+      - { nom: Malice glacée, effet: "Corps à corps, eau + 10 % d'érosion" }
+      - { nom: Mornifle, effet: "Tue la cible au contact si la vulnérabilité est mal faite" }
+      - { nom: Torgnole givrée, effet: "30 % d'érosion à tous 1 tour" }
+    mecaniques:
+      - { nom: Vulnérabilité, declencheur: "Yokaï en diagonale du Tengu + Yomi aligné, puis coup d'ARME sur le Yomi", effet: "Tengu vulnérable 3 tours" }
+  - nom: Fuji Givrefoux Nourricière
+    pv: "10000-15000"
+    sorts:
+      - { nom: Progéniture, effet: "Tue la cible au contact et la remplace par un Givrefoux" }
+      - { nom: Lait Maternel, effet: "Rayon 5 : boost + soin des alliés" }
+      - { nom: Foufoux, effet: "3 à 4 PO en diagonale, eau + 20 % d'érosion" }
+mecaniques:
+  - { nom: Mort d'un monstre, declencheur: combat de la Fuji, effet: "Les autres +1 PM ; Tengu et Fuji +1 000 dégâts 1 tour" }
+strategie:
+  - Ne tuer ni le Yokaï ni le Yomi avant le Tengu
+  - Jamais en diagonale de la Fuji (sauf derrière un obstacle)
+alertes:
+  - { quand: activation_yomi, texte: "Yokaï en place AVANT d'activer le Yomi", niveau: critique }
+  - { quand: fin_tour_joueur, texte: "Pas en diagonale de la Fuji", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14648/taniere-givrefoux]

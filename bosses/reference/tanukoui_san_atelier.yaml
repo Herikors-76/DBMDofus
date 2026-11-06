@@ -1,0 +1,25 @@
+id: tanukoui_san_atelier
+nom: Tanukouï San (Atelier)
+type: donjon
+contenu: Atelier du Tanukouï San
+niveau: 130
+position: "26,-24"
+pv: "6100-9100"
+phases:
+  nombre: 6
+  regle: Change de phase tous les 16,6 % de PV perdus
+sorts:
+  - { nom: Casse-noisettes, effet: "Phase I" }
+  - { nom: Boulodrome, effet: "Phase II ; +150 dommages de poussée 1 tour" }
+  - { nom: Tibagin, effet: "Phase III ; téléportation + feu en zone" }
+  - { nom: Burnes Électorales, effet: "+50 puissance aux alliés" }
+mecaniques:
+  - { nom: Géoglyphe, declencheur: monstre dans son géoglyphe, effet: "Invulnérable" }
+strategie:
+  - Sortir les monstres des glyphes (Sacrieur, Zobal, Pandawa)
+  - Le Dofus Ébène touche même s'il est invulnérable
+alertes:
+  - { quand: seuil_pv_16_pct, texte: "Nouvelle phase du Tanukouï", niveau: info }
+  - { quand: monstre_sur_geoglyphe, texte: "Sortez-le du géoglyphe", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14901/atelier-tanukoui-san]

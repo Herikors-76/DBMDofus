@@ -1,0 +1,22 @@
+id: comte_razoff
+nom: Comte Razof
+type: donjon
+contenu: Camp du Comte Razof
+niveau: 190
+position: "-68,30"
+pv: "11000-17000"
+etats: [Résistances très élevées]
+sorts:
+  - { nom: Pelliste, effet: "Terre, -0 à 6 PM, Affaibli + Pesanteur 1 tour" }
+  - { nom: Archi-Pelle, effet: "Eau, révèle les invisibles en cercle de 2" }
+  - { nom: Chasse Gardée, effet: "Réduit ses dégâts subis 1 tour" }
+  - { nom: Trophée de Chasse, effet: "Tue une invocation au contact, +1 PM et +200 puissance 2 tours" }
+mecaniques:
+  - { nom: Baisse des résistances, declencheur: invocation non statique en jeu, effet: "Le Comte perd des résistances" }
+strategie:
+  - Un maximum d'invocations non statiques
+  - Les garder hors de son contact
+alertes:
+  - { quand: invocation_au_contact, texte: "Trophée de Chasse : éloignez vos invocations", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14652/camp-comte-razof]

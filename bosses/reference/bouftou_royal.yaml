@@ -1,0 +1,19 @@
+id: bouftou_royal
+nom: Bouftou Royal
+type: donjon
+contenu: Cour du Bouftou Royal
+niveau: 30
+position: "2,-34"
+pv: "610-900"
+sorts:
+  - { nom: Guérison Bouftou, effet: "Soin ~60 sur un allié, 2 fois par tour max" }
+  - { nom: Cuirasse Laineuse, effet: "-30 % de dégâts subis pour un allié" }
+  - { nom: Morsure, effet: "Corps à corps, gros feu en vol de vie" }
+mecaniques:
+  - { nom: Frappe et fuite, declencheur: son tour, effet: "Frappe puis s'éloigne" }
+strategie:
+  - Finir les cibles avant son tour (soins)
+alertes:
+  - { quand: avant_tour_boss, texte: "Finissez les cibles blessées avant le Bouftou Royal", niveau: info }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13271/donjon-bouftous]

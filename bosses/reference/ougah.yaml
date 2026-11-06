@@ -1,0 +1,20 @@
+id: ougah
+nom: Ougah
+type: donjon
+contenu: Temple du Grand Ougah
+niveau: 180
+position: "-9,29"
+pv: "8400-12000"
+sorts:
+  - { nom: Les Coprins d'abord, effet: "Invoque un Fungus, 1 fois par tour" }
+  - { nom: Bizarrerie, effet: "(non détaillé)" }
+  - { nom: Acharnement, effet: "(non détaillé)" }
+  - { nom: Sirop Spore, effet: "(non détaillé)" }
+  - { nom: Spore Hanchambre, effet: "(non détaillé)" }
+strategie:
+  - Prévoir du désenvoûtement, les poisons des monstres sont très forts
+alertes:
+  - { quand: debut_tour_boss, texte: "Nouvelle invocation Fungus", niveau: info }
+fiabilite: source_unique
+completude: partielle
+sources: [https://dofus.jeuxonline.info/article/13855/donjon-fungus]

@@ -1,0 +1,20 @@
+id: haute_truche
+nom: Haute Truche
+type: donjon
+contenu: Volière de la Haute Truche
+niveau: 130
+position: "-10,-44"
+pv: "5200-7600"
+sorts:
+  - { nom: Flatulences buccales, effet: "Zone de 3 à 3 PO, air, -200 puissance ou 20 % d'érosion" }
+  - { nom: Tête dans le sable, effet: "Tout le terrain : terre, -3 PM, Pesanteur" }
+  - { nom: Prendre son pied, effet: "Contact, -20 % de résistances" }
+  - { nom: Dégazage, effet: "+2 PM, +40 tacle, +40 fuite pendant 2 tours" }
+mecaniques:
+  - { nom: Invulnérabilité, declencheur: attaque à l'arme, effet: "Invulnérable plusieurs tours" }
+strategie:
+  - Sorts uniquement, pas d'arme
+alertes:
+  - { quand: debut_combat, texte: "PAS d'arme sur la Haute Truche", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14274/voliere-haute-truche, https://www.millenium.org/guide/159755.html]

@@ -1,0 +1,170 @@
+# Gigalodon : boss final du raid de guilde « Gouffre du Gigalodon » (màj 3.6, 23/06/2026)
+# Doc : docs/bosses/gigalodon.md
+# Champs « fiabilite » : confirme = 2 sources concordantes ; source_unique = 1 seule source ; a_verifier = à confirmer en jeu.
+
+id: gigalodon
+nom: Gigalodon
+type: raid_guilde
+contenu: Gouffre du Gigalodon
+version_jeu: "3.6"
+donnees_relevees_le: 2026-11-06
+joueurs: { min: 8, max: 12 }
+fiabilite: confirme   # 2 guides concordants ; détail par champ ci-dessous
+
+stats:
+  niveau: 220
+  pv: 1000000000          # en pratique infini : le combat se gagne au tour 4, le but est le score
+  pa: 15
+  pm: 0
+  tacle: 80
+  fuite: 80
+  initiative: 10000
+  resistances_pct: { neutre: 0, terre: 0, feu: 0, eau: 0, air: 0 }
+  esquive_pa: 64
+  esquive_pm: 64
+  deplacable: false
+  hitbox_multi_cases: true      # matérialisée par un glyphe rouge ; toute case de la hitbox le blesse
+  sorts_de_zone_touchent_une_fois: true
+  fiabilite: source_unique      # wiki Dofus (fandom)
+
+combat:
+  duree_tours: 3
+  fin:
+    tour: 4
+    moment: debut_tour_apres_boss
+    effet: Gigalodoom
+    resultat: victoire
+  double_jeu:
+    - { moment: debut_tour }
+    - { moment: mi_tour, condition: moitie_des_personnages_ont_joue }
+  fiabilite: confirme
+
+# Indices visuels exploitables par la capture d'écran (aucune lecture du client).
+indices_visuels:
+  - id: compteur_tours
+    description: Machine au bord de la map qui affiche les tours restants
+    usage: lecture OCR / gabarit du tour courant
+    fiabilite: source_unique     # DPLN uniquement, Sigilos n'en parle pas
+  - id: assombrissement_dernier_tour
+    description: La map s'assombrit au dernier tour
+    usage: chute de luminosité moyenne sur la zone de jeu
+    fiabilite: source_unique
+  - id: glyphe_noir
+    description: Glyphe noir posé sur la case d'un personnage attrapé
+    usage: détection de couleur / gabarit sur la grille
+    fiabilite: confirme
+  - id: glyphe_rouge_hitbox
+    description: Glyphe rouge qui marque la hitbox du boss
+    usage: repère pour localiser le boss et ses cases de mêlée
+    fiabilite: source_unique
+
+sorts:
+  - id: gigarale
+    nom: Gigarâle
+    degats: 700
+    element: terre
+    cible: soi
+    frequence_par_tour: 1
+    zone: Touche chaque personnage à 2 PO ou moins d'un autre personnage ou d'une invocation alliée ; se propage autour de chaque cible touchée
+    parade: Garder au moins 3 cases entre alliés et invocations
+    fiabilite: confirme
+  - id: maxquale
+    nom: Maxquale
+    degats: 500
+    element: air
+    cible: mono
+    portee: infinie
+    ligne_de_vue: false
+    frequence_par_tour: 5
+    max_par_cible: 1
+    parade: Aucune (à encaisser)
+    fiabilite: confirme
+  - id: ultrasplash
+    nom: Ultrasplash
+    degats: 700
+    element: eau
+    cible: soi
+    frequence_par_tour: 1
+    zone: Cônes de chaque côté du boss
+    parade: Se placer en diagonale du boss ; résistances eau
+    fiabilite: confirme          # fréquence : DPLN seulement
+  - id: tournageoire
+    nom: Tournageoire
+    degats: 700
+    element: terre
+    cible: soi
+    frequence_par_tour: 1
+    zone: Cercle de taille 6, poussée de 7 cases sur une partie des cases
+    parade: Rester loin des bords du bassin
+    fiabilite: confirme          # fréquence : DPLN seulement
+
+mecaniques:
+  - id: dents_de_l_amer
+    nom: Les dents de l'amer
+    declencheur: debut_tour_boss
+    description: >
+      Les 3 cases de mêlée devant le boss sont les seules accessibles près de sa hitbox.
+      Un personnage dessus est attrapé au début du tour du boss : il passe son tour et un glyphe noir apparaît sur sa case.
+    resolution_tour_suivant:
+      - si: allie_sur_glyphe_noir
+        alors: Le boss avale le captif et attrape un nouveau personnage au contact
+      - si: glyphe_noir_libre
+        alors: Le boss recrache le captif sur le glyphe, dégâts terre = 80 % des PV actuels, puis état « Recraché » (1 tour, non attrapable)
+    fiabilite: a_verifier        # Sigilos : un allié sur le glyphe = le captif meurt ; ne parle pas de « Recraché »
+
+alertes:
+  - id: debut_combat
+    quand: { evenement: debut_combat }
+    texte: "Gigalodon : 3 tours. Écartez-vous (3 cases), diagonale, loin des bords."
+    niveau: info
+  - id: tour
+    quand: { evenement: debut_tour, tours: [1, 2, 3] }
+    texte: "Tour {tour}/3"
+    niveau: info
+  - id: dernier_tour
+    quand: { evenement: debut_tour, tours: [3] }
+    texte: "Dernier tour : tout le burst maintenant !"
+    niveau: important
+  - id: deuxieme_action
+    quand: { evenement: mi_tour }     # déclenché par raccourci manuel ou compteur de joueurs ayant joué
+    texte: "2ᵉ action du Gigalodon imminente"
+    niveau: important
+  - id: espacement
+    quand: { evenement: avant_action_boss }
+    texte: "Gigarâle : 3 cases entre vous !"
+    niveau: important
+  - id: glyphe_noir
+    quand: { evenement: indice_detecte, indice: glyphe_noir }
+    texte: "Glyphe noir : quelqu'un dessus ? Décision du raid (avaler ou recracher)"
+    niveau: critique
+  - id: melee_interdite
+    quand: { evenement: debut_tour_joueur }
+    texte: "Ne finis jamais ton tour sur les 3 cases devant la gueule"
+    niveau: info
+
+strategie:
+  plan_burst:
+    - { tour: 1, objectif: Boosts }
+    - { tour: 2, objectif: Retraits de résistances }
+    - { tour: 3, objectif: Tous les dégâts (pic du Dofus Nébuleux) }
+  dommages: Privilégier le mono-cible, les zones ne le touchent qu'une fois
+  classes_conseillees: [Iop, Pandawa, Huppermage, Sram, Zobal, Ouginak, Eliotrope, Roublard, Crâ]
+  objets: [Dofus Nébuleux, Jugement de Thanathena (+4 % de dégâts subis), trophées Arcaniste et Impétueux]
+
+score_degats:   # dégâts infligés → points de bonus de raid
+  - { degats: 10000, points: 1000 }
+  - { degats: 20000, points: 2000 }
+  - { degats: 40000, points: 3000 }
+  - { degats: 70000, points: 4000 }
+  - { degats: 400000, points: 11000 }
+  - { degats: 500000, points: 12000 }
+  - { degats: 600000, points: 13000 }
+  - { degats: 800000, points: 14000 }
+  - { degats: 1000000, points: 15000 }
+  # paliers manquants (5 à 10) : voir la section « Dégâts et score » de DPLN
+
+sources:
+  - https://www.dofuspourlesnoobs.com/gouffre-du-gigalodon.html   # màj du 29/06/2026
+  - https://beta.sigilos.fr/guides/raid-gigalodon-dofus-guide      # page du 27/09/2026
+  - https://dofuswiki.fandom.com/wiki/Gigalodon                    # stats
+  - https://zeminal.tech/types-de-raid/2/guide                      # barème de score

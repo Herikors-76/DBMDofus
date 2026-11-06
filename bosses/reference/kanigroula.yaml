@@ -1,0 +1,22 @@
+id: kanigroula
+nom: Kanigroula
+type: donjon
+contenu: Grotte de Kanigroula
+niveau: 160
+position: "-5,54"
+pv: "8400-12000"
+sorts:
+  - { nom: Chachyène dominante, effet: "Tue une invocation (jusqu'à 8 PO)" }
+  - { nom: Motivation captivante, effet: "+3 PA à un allié et modifie ses sorts" }
+  - { nom: Rugissement matriarcal, effet: "Zone 3 : -2 PM, -20 fuite ; alliés +tacle +PM" }
+  - { nom: Chachyène cinglante, effet: "Eau zone 1, -20 % de résistance eau" }
+mecaniques:
+  - { nom: Boost de meute, declencheur: début du tour de chaque allié, effet: "Ennemis proches +100 puissance, +10 critiques" }
+  - { nom: Sauvagerie, declencheur: mort de Kanigroula, effet: "Les monstres restants +2 PM, +200 puissance, +10 % de résistance" }
+strategie:
+  - Ne pas commencer son tour au contact des ennemis
+  - Kanigroula en dernier
+alertes:
+  - { quand: avant_kill_boss, texte: "Kanigroula en dernier (Sauvagerie)", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13562/grotte-kanigroula, https://www.millenium.org/guide/148127.html]

@@ -1,0 +1,19 @@
+id: dragon_cochon
+nom: Dragon Cochon
+type: donjon
+contenu: Antre du Dragon Cochon
+niveau: 100
+position: "-1,33"
+pv: "2100-3100"
+sorts:
+  - { nom: Étourderie Mortelle, effet: "Poison neutre par PA dépensé, 2 tours (~2 400 si on joue)" }
+  - { nom: Immobilisation, effet: "-PM" }
+  - { nom: Écrasement Handicapant, effet: "Terre, -PA" }
+  - { nom: Croutage, effet: "Mêlée, poussée de 6" }
+strategie:
+  - Sous poison, ne jouer que si on peut le tuer
+  - Rester à droite de la carte (les monstres arrivent à la fin du poison)
+alertes:
+  - { quand: etat_joueur, etat: Étourderie Mortelle, texte: "Poison : NE DÉPENSEZ PAS vos PA", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13762/antre-dragon-cochon]

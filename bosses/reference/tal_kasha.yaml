@@ -1,0 +1,27 @@
+id: tal_kasha
+nom: Tal Kasha
+type: donjon
+contenu: Chambre de Tal Kasha
+niveau: 200
+position: "12,-77"
+pv: "18000-26000"
+etats: [Invulnérable tant qu'elle n'a pas été placée sur un glyphe valide]
+sorts:
+  - { nom: Filature, effet: "1 à 5 PO en ligne, attire de 4 cases, gros dégâts feu" }
+  - { nom: Transe-Perse, effet: "Corps à corps, énormes dégâts neutres" }
+  - { nom: Cheveux partir de là, effet: "Si vulnérable : 1 à 4 PO, téléportation sur la case ciblée, tous les 2 tours ; bloqué par Pesanteur" }
+mecaniques:
+  - { nom: Glyphes, declencheur: mort d'un monstre accompagnant, effet: "Crée un glyphe ; placer Tal Kasha sur le glyphe d'un monstre DIFFÉRENT à chaque fois ; ne pas tuer et placer dans le même tour" }
+  - { nom: Réinvocation, declencheur: mort des accompagnants, effet: "Tal Kasha les ramène à la vie, ce qui crée de nouveaux glyphes" }
+  - { nom: Attaque à travers les alliés, declencheur: tour de Tal Kasha, effet: "Frappe un perso aligné avec un de ses alliés, sans ligne de vue ; vise le plus proche" }
+  - { nom: Échange de place, declencheur: 1re tentative de retrait PM du tour, effet: "Échange sa place avec Tal Kasha" }
+strategie:
+  - Ne jamais finir son tour aligné avec un monstre
+  - Tuer les accompagnants pour créer des glyphes, puis placer Tal Kasha sur des glyphes différents
+  - Éroder les monstres réinvoqués
+alertes:
+  - { quand: debut_tour_boss, texte: "Personne aligné avec un monstre !", niveau: critique }
+  - { quand: etat_invulnerable, texte: "Placez Tal Kasha sur le glyphe d'un autre monstre", niveau: critique }
+  - { quand: tous_les_2_tours, texte: "Téléportation de Tal Kasha : Pesanteur", niveau: info }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14675/chambre-tal-kasha]

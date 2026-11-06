@@ -1,0 +1,15 @@
+id: kanniboul_ebil
+nom: Kanniboul Ebil
+type: donjon
+contenu: Village Kanniboul
+niveau: 60
+position: "29,9"
+pv: "1600-2300"
+sorts:
+  - { nom: Bénédiction Moonesque, effet: "Tous les 4 tours, sur toutes ses entités alliées" }
+  - { nom: Inspiration Moonesque, effet: "Invoque une Poupée Aycetroy" }
+  - { nom: Bouboule, effet: "Neutre à tous vos persos + Maudit" }
+alertes:
+  - { quand: tous_les_4_tours, texte: "Bénédiction Moonesque : alliés boostés", niveau: info }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14022/village-kanniboul-230]

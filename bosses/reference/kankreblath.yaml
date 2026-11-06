@@ -1,0 +1,18 @@
+id: kankreblath
+nom: Kankreblath
+type: donjon
+contenu: Cache de Kankreblath
+niveau: 40
+position: "3,-17"
+pv: "820-1200"
+sorts:
+  - { nom: Blathération, effet: "~50 feu en ligne de 10, depuis le contact" }
+  - { nom: Kankroulahoup, effet: "~60 feu en cercle de 3, soigne le boss et ses alliés ; tous les 3 tours" }
+  - { nom: Sort aléatoire, effet: "Invisibilité, bond ou Vilinsekt" }
+strategie:
+  - Ne pas rester groupés
+  - Le tuer tôt
+alertes:
+  - { quand: tous_les_3_tours, texte: "Kankroulahoup : écartez-vous", niveau: info }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13548/donjon-cache-kankreblath]

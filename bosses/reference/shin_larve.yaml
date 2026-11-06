@@ -1,0 +1,17 @@
+id: shin_larve
+nom: Shin Larve
+type: donjon
+contenu: Donjon des Larves
+niveau: 50
+position: "-2,-5"
+pv: "2000-2900"
+sorts:
+  - { nom: Déglutition, effet: "Neutre au contact, -PA, poussée de 4" }
+  - { nom: Enlisement, effet: "-PM, lui donne des PA" }
+  - { nom: Convocation gluante, effet: "Invoque des larves" }
+strategie:
+  - La tuer vite pour limiter les invocations
+alertes:
+  - { quand: debut_tour_boss, texte: "Nouvelles larves invoquées", niveau: info }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13760/donjon-larves]

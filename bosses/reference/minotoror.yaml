@@ -1,0 +1,18 @@
+id: minotoror
+nom: Minotoror
+type: donjon
+contenu: Centre du Labyrinthe du Minotoror
+niveau: 120
+position: "-42,-17"
+pv: "4100-6000"
+sorts:
+  - { nom: Lancer de Tofu, effet: "Neutre en ligne 1 à 10 PO, invoque un Tofu Lancé, poussée de 1" }
+  - { nom: Graines Magiques, effet: "1 à 5 PO, bonus de vitalité + 50 dégâts" }
+  - { nom: Sabotage, effet: "Gros neutre au corps à corps, poussée de 6" }
+strategie:
+  - Rester à distance
+  - Tuer d'abord les accompagnants
+alertes:
+  - { quand: debut_tour_boss, texte: "Hors de son contact (Sabotage)", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13877/labyrinthe-minotoror-salle-minotot]

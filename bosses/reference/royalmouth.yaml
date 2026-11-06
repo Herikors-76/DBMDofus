@@ -1,0 +1,22 @@
+id: royalmouth
+nom: Royalmouth
+type: donjon
+contenu: Serre du Royalmouth
+niveau: 120
+position: "-84,-49"
+pv: "4000-5800"
+etats: [Invulnérable]
+sorts:
+  - { nom: Aléamouth, effet: "Invoque un monstre des champs de glace (1 à la fois, relance 3 tours)" }
+  - { nom: Regroupmouth, effet: "Attire en croix de 2, -1 PM" }
+  - { nom: Lichemouth, effet: "~450 feu en vol de vie sur les 4 cases adjacentes" }
+mecaniques:
+  - { nom: Vulnérabilité, declencheur: dommages de poussée sur lui, effet: "Vulnérable ; tout ennemi aligné avec lui meurt" }
+  - { nom: Berserkmouth, declencheur: Boufmouth Légendaire qui pousse un allié contre lui, effet: "Berserkmouth" }
+strategie:
+  - Le garder pour la fin
+  - En duo, Boufmouth de Guerre et Légendaire d'abord
+alertes:
+  - { quand: vulnerable, texte: "Royalmouth vulnérable : pas aligné avec lui !", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13397/donjon-serre-royalmouth]

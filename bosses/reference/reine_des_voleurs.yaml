@@ -1,0 +1,26 @@
+id: reine_des_voleurs
+nom: Reine des Voleurs
+type: donjon
+contenu: Trône de la Cour Sombre
+niveau: 200
+position: "8,-4 (Srambad)"
+pv: "15000-22000"
+etats: [Invisible avec ses alliés sur le glyphe de Brume]
+sorts:
+  - { nom: Mort en Sursis, effet: "Avance de 6, échange avec la cible, air selon les PV perdus ; cible ennemie en Mort en sursis" }
+  - { nom: Brume, effet: "Glyphe de rang 4 : la Reine et ses alliés y sont invisibles" }
+  - { nom: Coup critique, effet: "Corps à corps : eau + poison par PM utilisé ; en critique, désenvoûte 4 tours et frappe tous les éléments" }
+mecaniques:
+  - { nom: Bonbombes, declencheur: début du tour de chaque perso, effet: "Invoque une bonbombe à 2 PO ; chaque bonbombe réduit de 10 % les dégâts subis par la Reine (cumulable)" }
+  - { nom: Explosion rouge, declencheur: bonbombe rouge, effet: "Tue les alliés à 10 PO dans sa ligne, blesse les monstres, chaîne les bombes en ligne ; désamorce en bleu une bombe en diagonale" }
+  - { nom: Bonbombe bleue, declencheur: bombe désamorcée, effet: "Soin de 750 et retire Mort en sursis" }
+  - { nom: Mort de la Reine, declencheur: mort de la Reine, effet: "Les alliés subissent +50 % de dégâts" }
+strategie:
+  - Avec Enutrof (2e) : corrompre au tour 2, Retraite Anticipée au tour 3, la tuer au tour 4
+  - Avec Roublard/Iop : la tuer au tour 3
+  - Utiliser les bonbombes pour bloquer les lignes de vue
+alertes:
+  - { quand: etat_joueur, etat: Mort en sursis, texte: "Mort en sursis : bombe bleue avant 3 tours", niveau: critique }
+  - { quand: bonbombe_rouge, texte: "Pas dans la ligne d'une bombe rouge (10 PO)", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13560/donjon-reine-voleurs]

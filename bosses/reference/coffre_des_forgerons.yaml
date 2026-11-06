@@ -1,0 +1,18 @@
+id: coffre_des_forgerons
+nom: Coffre des Forgerons
+type: donjon
+contenu: Donjon des Forgerons
+niveau: 50
+position: "13,21"
+pv: "820-1200"
+sorts:
+  - { nom: Avidité, effet: "Corps à corps, vol de vie" }
+  - { nom: Tchaiste, effet: "À distance, selon ses PV manquants" }
+mecaniques:
+  - { nom: Passif, declencheur: tant qu'il n'est pas attaqué, effet: "Inoffensif" }
+strategie:
+  - Le tuer en un seul tour
+alertes:
+  - { quand: avant_attaque_boss, texte: "Tuez le Coffre en un seul tour", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13333/donjon-forgerons]

@@ -1,0 +1,22 @@
+id: maitre_corbac
+nom: Maître Corbac
+type: donjon
+contenu: Bibliothèque du Maître Corbac
+niveau: 110
+position: "-20,-62"
+pv: "4500-6600"
+sorts:
+  - { nom: Sanction Ténébreuse, effet: "Corps à corps, air" }
+  - { nom: Lien Volatile, effet: "Zone de 2, +critiques" }
+  - { nom: Invocation de Corbac, effet: "Invoque un Corbac" }
+  - { nom: Carapace d'Ailes, effet: "Se fige (0 PA/PM) et renvoie les dommages" }
+mecaniques:
+  - { nom: Rono le Renarbo, declencheur: Croassement, effet: "Retire vos résistances" }
+  - { nom: Horace, declencheur: Bousculade plumeuse, effet: "Repousse de 12 cases" }
+strategie:
+  - Rono en priorité
+  - Pendant la Carapace, frapper les escortes
+alertes:
+  - { quand: sort_lance, sort: Carapace d'Ailes, texte: "Carapace : ne frappez PAS le Corbac", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13852/bibliotheque-maitre-corbac]

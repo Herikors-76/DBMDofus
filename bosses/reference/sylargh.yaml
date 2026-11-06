@@ -1,0 +1,24 @@
+id: sylargh
+nom: Sylargh
+type: donjon
+contenu: Transporteur de Sylargh
+niveau: 200
+position: "-53,-84 (Château du Comte)"
+pv: "13000-19000"
+etats: [Invulnérable]
+sorts:
+  - { nom: Poinçon, effet: "(non détaillé)" }
+  - { nom: Mortier, effet: "(non détaillé)" }
+  - { nom: Dégage de qualité, effet: "(non détaillé)" }
+mecaniques:
+  - { nom: Explosion, declencheur: "monstre tué, réinvoqué, puis retué", effet: "Il explose et retire l'invulnérabilité de Sylargh 1 tour (Sylargh à 5-10 PO de l'explosion) ; explosions en chaîne possibles" }
+  - { nom: Réinvocation, declencheur: mort d'un monstre, effet: "Réinvoqué par le suivant à jouer ; saute son 1er tour" }
+  - { nom: Seuil de PV, declencheur: frapper Sylargh, effet: "Il faut avoir moins de 90 % de ses PV" }
+  - { nom: Pacifiste, declencheur: perso dans l'explosion à plus de 89 % PV, effet: "Pacifiste" }
+strategie:
+  - Placer Sylargh à 5-10 PO avant l'explosion
+  - Expulsar du Mécanofoux aide au placement
+alertes:
+  - { quand: avant_explosion, texte: "Sylargh à 5-10 PO, vous sous 90 % PV", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14651/transporteur-sylargh]

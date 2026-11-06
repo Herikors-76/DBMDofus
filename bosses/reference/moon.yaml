@@ -1,0 +1,23 @@
+id: moon
+nom: Moon
+type: donjon
+contenu: Arbre de Moon
+niveau: 100
+position: "29,6"
+pv: "3700-5300"
+etats: [100 % de résistances (Rituel d'emprisonnement)]
+sorts:
+  - { nom: Marteau de Moon, effet: "Air, -PA/PM" }
+  - { nom: Choc Sismique, effet: "Zone air" }
+  - { nom: Face Cachée, effet: "Invoque Darkli Moon" }
+mecaniques:
+  - { nom: Totems, declencheur: fin du tour de Darkli Moon, effet: "Un Totem apparaît ; posé sur le glyphe de son élément, il retire la résistance de cet élément" }
+  - { nom: Attraction de Totem, declencheur: frapper un Totem avec son élément en étant aligné, effet: "L'attire à votre contact" }
+  - { nom: Réinitialisation, declencheur: tous les 5 tours, effet: "Totems et glyphes disparaissent" }
+strategie:
+  - Sorts des 4 éléments, courte et longue portée
+  - Tuer le Gloutovore en premier (un retrait de PM soigne tous ses alliés)
+alertes:
+  - { quand: tous_les_5_tours, texte: "Totems et glyphes réinitialisés", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14018/arbre-moon-230]

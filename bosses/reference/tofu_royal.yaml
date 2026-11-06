@@ -1,0 +1,20 @@
+id: tofu_royal
+nom: Tofu Royal
+type: donjon
+contenu: Tofulailler Royal
+niveau: 120
+position: "5,6"
+pv: "3400-5000"
+etats: [30 PM, forte esquive, fuyard]
+sorts:
+  - { nom: Écrasement Royal, effet: "Mêlée air, -PA, malus de vitalité 2 tours" }
+  - { nom: Invocation Royale de Tofu, effet: "Invoque un Tofuzmo (Plumeau Aveuglant : -PO au contact)" }
+  - { nom: Déchiquetage, effet: "Mêlée terre" }
+  - { nom: Béco du Tofu Royal, effet: "1-2 PO, air" }
+strategie:
+  - Dégâts à distance (il fuit)
+  - Surveiller les retraits de PA en zone
+alertes:
+  - { quand: debut_tour_boss, texte: "Retraits de PA en zone : écartez-vous", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13757/tofulailler-royal]

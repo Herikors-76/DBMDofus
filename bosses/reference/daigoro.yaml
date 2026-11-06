@@ -1,0 +1,18 @@
+id: daigoro
+nom: Daïgoro
+type: donjon
+contenu: Repaire de Daïgoro
+niveau: 80
+position: "32,-31"
+pv: "2400-3500"
+sorts:
+  - { nom: Marque de Pandala, effet: "Corps à corps : marque jusqu'à 5 stades (permanente), -PA" }
+  - { nom: Lance Estrale, effet: "Sur une cible marquée au contact : 10 à 20 % de ses PV selon le stade" }
+  - { nom: Paume de pain, effet: "Ligne droite : attire puis repousse de 1 à 6" }
+  - { nom: Destruction de la montagne, effet: "Bûche invoquée, dégâts aux ennemis proches" }
+strategie:
+  - Tuer les Kitsous d'escorte
+alertes:
+  - { quand: fin_tour_joueur, texte: "Évitez son contact (marque)", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13888/repaire-daigoro]

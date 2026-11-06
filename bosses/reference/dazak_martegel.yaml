@@ -1,0 +1,25 @@
+id: dazak_martegel
+nom: Dazak Martegel
+type: donjon
+contenu: Brasserie du Roi Dazak
+niveau: 200
+position: "-62,-70"
+pv: "18000-26000"
+etats: [Résistances très élevées au départ, Nimpatience (stades 1 à 3)]
+sorts:
+  - { nom: Empalement royal, effet: "Corps à corps, neutre, 40 % d'érosion 2 tours, -10 % de résistances cumulables tout le combat" }
+  - { nom: Ninflitration, effet: "Bond de 1 à 5 cases, air sur les cases adjacentes à l'arrivée" }
+  - { nom: Nintrépidité, effet: "Alliés +2 PM et 1 500 de bouclier 1 tour ; tous les 2 tours dès le tour 3" }
+mecaniques:
+  - { nom: Affaiblissement, declencheur: déplacement du boss au stade Nimpatience 3, effet: "-5 % de résistances par déplacement, pour tout le combat ; les dommages de poussée lui en REDONNENT" }
+  - { nom: Fenêtre de 2 tours, declencheur: stade Nimpatience 3, effet: "2 tours pour faire chuter ses résistances, puis attendre le stade 3 suivant" }
+strategie:
+  - Le déplacer (poussée/attirance) dès le stade 3
+  - Éviter les dommages de poussée
+  - Garder le Tanklume à distance (il échange avec le boss)
+alertes:
+  - { quand: etat_nimpatience_3, texte: "Nimpatience 3 : déplacez Dazak, 2 tours !", niveau: critique }
+  - { quand: tous_les_2_tours_des_tour_3, texte: "Nintrépidité : bouclier et PM aux alliés", niveau: important }
+  - { quand: corps_a_corps, texte: "Évitez de rester au contact (érosion)", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14609/brasserie-roi-dazak, "https://www.breakflip.com/?p=119731"]

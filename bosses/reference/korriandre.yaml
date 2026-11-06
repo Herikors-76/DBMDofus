@@ -1,0 +1,22 @@
+id: korriandre
+nom: Korriandre
+type: donjon
+contenu: Antre du Korriandre
+niveau: 180
+position: "-73,-69"
+pv: "8900-13000"
+sorts:
+  - { nom: Riraule, effet: "Ressuscite un allié à 50 %" }
+  - { nom: Loute, effet: "Attire + malus de fuite" }
+  - { nom: Hairpay, effet: "Air en vol de vie" }
+  - { nom: Paixe, effet: "Invoque une Sporakne qui repousse" }
+mecaniques:
+  - { nom: Glyphe mortel, declencheur: début du tour de chaque perso, effet: "Glyphe sous ses pieds : tue quiconque commence ou finit son tour dessus (invocations comprises)" }
+  - { nom: Rage, declencheur: perte de PV, effet: "Frappe plus fort quand sa vie baisse" }
+strategie:
+  - Combat rapide (Blitzkrieg)
+  - Ne pas le laisser faible au milieu du groupe
+alertes:
+  - { quand: debut_tour_joueur, texte: "Quitte ton glyphe avant la fin du tour !", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14647/antre-korriandre]

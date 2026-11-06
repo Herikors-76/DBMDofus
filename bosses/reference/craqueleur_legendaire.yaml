@@ -1,0 +1,19 @@
+id: craqueleur_legendaire
+nom: Craqueleur Légendaire
+type: donjon
+contenu: Pitons Rocheux des Craqueleurs
+niveau: 70
+position: "-3,-7"
+pv: "3100-4600"
+sorts:
+  - { nom: Invocation Montagnarde, effet: "Monstre au hasard" }
+  - { nom: Peau de Topaze, effet: "-1 000 dégâts subis pendant 3 tours" }
+  - { nom: Pierre Étourdissante, effet: "Il perd 100 PA mais gagne des dégâts feu" }
+  - { nom: Frappe du Craqueleur Légendaire, effet: "Mêlée feu, zone de 2" }
+strategie:
+  - Ne pas se laisser déborder par les invocations
+  - Le cibler vite (ses résistances augmentent)
+alertes:
+  - { quand: sort_lance, sort: Peau de Topaze, texte: "Peau de Topaze 3 tours : changez de cible", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13758/donjon-craqueleurs]

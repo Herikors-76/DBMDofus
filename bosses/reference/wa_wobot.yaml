@@ -1,0 +1,19 @@
+id: wa_wobot
+nom: Wa Wobot
+type: donjon
+contenu: Terrier du Wa Wabbit
+niveau: 80
+position: "28,-12"
+pv: "3500-5000"
+sorts:
+  - { nom: Mékattwaction, effet: "Attire de 12, neutre, Wobot Tamponneur à votre position initiale" }
+  - { nom: Twansmutation, effet: "Tue une invocation et la remplace par un Wobot Tamponneur" }
+  - { nom: Mékawapace, effet: "+30 % de résistances" }
+  - { nom: Wouste, effet: "Feu + poussée de 3" }
+  - { nom: Substitution, effet: "Échange" }
+strategie:
+  - Anticiper les dommages de poussée (très forts)
+alertes:
+  - { quand: fin_tour_joueur, texte: "Pas dos à un obstacle (Wouste)", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13891/donjon-wabbits]

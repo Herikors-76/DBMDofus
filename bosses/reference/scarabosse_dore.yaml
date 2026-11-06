@@ -1,0 +1,20 @@
+id: scarabosse_dore
+nom: Scarabosse Doré
+type: donjon
+contenu: Donjon des Scarafeuilles
+niveau: 40
+position: "1,26"
+pv: "1600-2400"
+sorts:
+  - { nom: Brouillard Empoisonné, effet: "-PO, -PM, -PA à tous les adversaires" }
+  - { nom: Picoti, effet: "Tous éléments, courte distance" }
+  - { nom: Naissance, effet: "Invoque un Scarafeuille Immature" }
+  - { nom: Soin Feuillu, effet: "Soigne ses alliés proches" }
+mecaniques:
+  - { nom: Libération, declencheur: entités au contact, effet: "Les repousse" }
+strategie:
+  - À distance
+alertes:
+  - { quand: fin_tour_joueur, texte: "Restez à distance", niveau: info }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13764/donjon-scarafeuilles]

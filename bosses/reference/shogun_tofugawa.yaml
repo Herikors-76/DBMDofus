@@ -1,0 +1,22 @@
+id: shogun_tofugawa
+nom: Shogun Tofugawa
+type: donjon
+contenu: Tombe du Shogun Tofugawa
+niveau: 160
+position: "36,-44"
+pv: "8000-11000"
+etats: [Invulnérable dès le début]
+sorts:
+  - { nom: Hageshī Kaze, effet: "Croix de 3, air, +dommages 1 tour" }
+  - { nom: Aspiration du Yokomaïnu, effet: "En ligne, air + eau en vol de vie, attire" }
+  - { nom: Shin Kûdaigyoku, effet: "Zone de 2, air, repousse" }
+mecaniques:
+  - { nom: Lanterne des Spiritueurs, declencheur: lanterne posée près de lui, effet: "Boss vulnérable 2 tours, ennemis invisibles (brume), 2 Assaïhin invoqués" }
+  - { nom: Recharge, declencheur: fenêtre ratée, effet: "Attendre 2 tours avant de relancer la lanterne" }
+strategie:
+  - Tuer vite les Kabushido à distance
+  - Anticiper ses déplacements pendant la brume
+alertes:
+  - { quand: lanterne_posee, texte: "Shogun vulnérable 2 tours : burst", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14910/tombe-shogun-tofugawa-ile-grobe-dofus-257]

@@ -1,0 +1,24 @@
+id: croqueleur
+nom: Croqueleur
+type: donjon
+contenu: La Croquanterie
+niveau: 130
+position: "-1,-7 (Île de Pwâk)"
+pv: "10000-20000"
+etats: [Invulnérable]
+phases:
+  cycle_elements: [Feu, Air, Eau, Terre]
+sorts:
+  - { nom: Attraction gourmande, effet: "Attire" }
+  - { nom: Total Impwâkt, effet: "Zone + repousse" }
+  - { nom: Croustichoc, effet: "Dégâts + effet" }
+mecaniques:
+  - { nom: Pépite, declencheur: frapper dans l'élément de la phase puis déplacer le boss, effet: "Invoque une Pépite ; non tuée à temps, il la mange et récupère des PV" }
+  - { nom: Résistance de la Pépite à distance, declencheur: selon l'élément, effet: "Feu invulnérable, air -70 %, eau -40 %, terre -10 %" }
+strategie:
+  - Rester à distance
+  - Tour 1 : frapper puis déplacer le boss, les alliés tuent la Pépite
+alertes:
+  - { quand: pepite_invoquee, texte: "Tuez la Pépite avant qu'il la mange", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14722/croquanterie]

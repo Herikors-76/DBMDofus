@@ -1,0 +1,25 @@
+id: merkator
+nom: Merkator
+type: donjon
+contenu: Aquadôme de Merkator
+niveau: 200
+position: "21,18"
+pv: "13000-19000"
+sorts:
+  - { nom: Torpillage de glace, effet: "Corps à corps, gros dégâts eau, Pesanteur, -50 % PV 1 tour" }
+  - { nom: Sondage de Bronze, effet: "1 à 3 PO, terre en ligne de 5" }
+  - { nom: Baphe Thysca, effet: "Boost Sondage, attire de 11, -4 PM" }
+  - { nom: Bouche-à-Bouche, effet: "Ressuscite le dernier allié mort à 50 % ; dès le tour 6 puis tous les 5 tours" }
+mecaniques:
+  - { nom: Réduction à distance, declencheur: attaque à distance, effet: "-50 % de dégâts ; frapper au contact" }
+  - { nom: Retrait de PM, declencheur: tout retrait de PM subi, effet: "Gros dégâts feu au perso, la moitié soigne Merkator" }
+  - { nom: Repoussée, declencheur: attaque au corps à corps d'un monstre, effet: "Pousse de 3 les entités alignées/en diagonale" }
+strategie:
+  - Le frapper au contact
+  - Résistances feu
+  - Surveiller les résurrections
+alertes:
+  - { quand: retrait_pm, texte: "Retrait de PM = gros feu + soin du boss", niveau: critique }
+  - { quand: tour_6_puis_tous_les_5, texte: "Bouche-à-Bouche : résurrection", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14178/aquadome-merkator]

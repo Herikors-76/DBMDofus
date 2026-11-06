@@ -1,0 +1,19 @@
+id: maitre_pandore
+nom: Maître Pandore
+type: donjon
+contenu: Repaire des Pandikazes
+niveau: 120
+position: "18,-36"
+pv: "6100-8900"
+sorts:
+  - { nom: Invocation de Bouate de Pandore, effet: "La Bouate fait apparaître un monstre aléatoire du donjon" }
+  - { nom: Bambou Musical, effet: "1 à 5 PO, eau, vole des PA, retire des PM, échange" }
+mecaniques:
+  - { nom: Bouate, declencheur: invocation, effet: "Ne meurt que par dommages de poussée" }
+strategie:
+  - Tuer la Bouate à la poussée
+  - Garder une invocation inoffensive pour éviter pire
+alertes:
+  - { quand: bouate_invoquee, texte: "Bouate : poussez-la contre un obstacle", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13885/donjon-pandikazes]

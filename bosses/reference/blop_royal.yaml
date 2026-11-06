@@ -1,0 +1,19 @@
+id: blop_royal
+nom: Blop Royal
+type: donjon
+contenu: Donjon des Blops
+niveau: 60
+position: "-7,-43"
+pv: "2400-3500"
+variantes: [Coco, Griotte, Indigo, Reinette]
+sorts:
+  - { nom: Blopunition Royale, effet: "Air en vol de vie, vole 1 PM" }
+  - { nom: Blovocation, effet: "Invoque un Blop au hasard (parfois un Gloutoblop qui avale alliés et ennemis)" }
+  - { nom: Blotection, effet: "Immunise la cible à un élément" }
+strategie:
+  - Frapper l'élément faible de la variante
+  - Tuer vite tout Gloutoblop
+alertes:
+  - { quand: gloutoblop_invoque, texte: "Gloutoblop : tuez-le vite", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13771/donjon-blops-antre-blop-multicolore]

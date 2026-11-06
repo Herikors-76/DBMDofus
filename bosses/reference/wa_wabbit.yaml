@@ -1,0 +1,20 @@
+id: wa_wabbit
+nom: Wa Wabbit
+type: donjon
+contenu: Château du Wa Wabbit
+niveau: 60
+position: "24,-13"
+pv: "3000-4500"
+sorts:
+  - { nom: Abrutissement, effet: "Retire des caractéristiques élémentaires" }
+  - { nom: WaWabehameha, effet: "Neutre à distance" }
+  - { nom: Awmuwe Woyale, effet: "Réduit ses dégâts subis" }
+  - { nom: Cawotte Woyale, effet: "Cawotte qui pose un glyphe soignant" }
+mecaniques:
+  - { nom: Grands Pa Wabbits, declencheur: leur tour, effet: "Retirent des PM" }
+strategie:
+  - Tuer vite les Grands Pa Wabbits
+alertes:
+  - { quand: debut_combat, texte: "Focus Grands Pa Wabbits (retrait PM)", niveau: info }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13890/chateau-wabbit]

@@ -1,0 +1,24 @@
+id: phossile
+nom: Phossile
+type: donjon
+contenu: Galerie du Phossile (dimension Énutrosor)
+niveau: 150
+position: "-2,-3 (Énutrosor)"
+pv: "8600-12000"
+sorts:
+  - { nom: Roc Phorreur, effet: "Poussée de 2, terre" }
+  - { nom: Phorce, effet: "2 lignes neutres : une fixe (~300), une qui grossit quand il perd des PV" }
+  - { nom: Bain de lave, effet: "Désenvoûte 2 tours puis feu en zone" }
+  - { nom: Épicentre, effet: "Eau jusqu'à 7 cases, attire autour de la cible" }
+mecaniques:
+  - { nom: Centrage, declencheur: fin de tour des persos, effet: "-1 PM aux monstres à plus de 8 cases, soigne les alliés à moins de 6" }
+  - { nom: Glyphiphi, declencheur: perso poussé ou attiré, effet: "Glyphe rouge : +30 % de dégâts subis si on y finit son tour" }
+  - { nom: Abîme, declencheur: "tours 5, 9, 13…", effet: "Tue tous les persos dans un cercle de 4" }
+strategie:
+  - Rester loin des monstres
+  - Le finir vite (Phorce grossit)
+alertes:
+  - { quand: debut_tour, tours_cycle: { depart: 5, pas: 4 }, texte: "Abîme : sortez du cercle de 4 !", niveau: critique }
+  - { quand: fin_tour_joueur, texte: "Pas sur un glyphe rouge", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14132/galerie-phossile]

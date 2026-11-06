@@ -1,0 +1,18 @@
+id: halouine
+nom: Halouine
+type: donjon
+contenu: Potager d'Halouine
+niveau: 100
+position: "-1,22 (Halouine)"
+pv: "3300-4800"
+sorts:
+  - { nom: Râttirance, effet: "Attire de 5, en ligne" }
+  - { nom: Moissonnage, effet: "Contact, terre en vol de vie, +20 % de vitalité 3 tours, poussée de 1" }
+  - { nom: Plantes Zombies, effet: "Réinvoque un allié mort à 1 % PV, invulnérable 1 tour" }
+  - { nom: Citwouille Explosive, effet: "1 à 7 PO, eau, réduit les effets aléatoires" }
+strategie:
+  - Pas d'idoles de dégâts de mêlée
+alertes:
+  - { quand: debut_tour_boss, texte: "Évitez son contact (vol de vie + vitalité)", niveau: info }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14179/potager-halouine]

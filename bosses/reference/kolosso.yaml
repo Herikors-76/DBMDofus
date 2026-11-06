@@ -1,0 +1,24 @@
+id: kolosso
+nom: Kolosso
+type: donjon
+contenu: Cavernes du Kolosso
+niveau: 190
+position: "-61,-69"
+pv: "8000-12000"
+etats: [Invulnérable sauf après dégâts d'une invocation]
+sorts:
+  - { nom: Razepoutine, effet: "Depuis le contact, gros dégâts terre en cône infini" }
+  - { nom: Baïkal, effet: "+50 dommages" }
+  - { nom: Illyana, effet: "Sur un allié : attire de 2 et soigne" }
+mecaniques:
+  - { nom: Vulnérabilité, declencheur: dégâts d'une invocation, effet: "Vulnérable jusqu'au prochain tour de cette invocation" }
+  - { nom: Professeur Xa, declencheur: en vie, effet: "Bloque les soins classiques (sauf % de vitalité)" }
+strategie:
+  - Une invocation qui frappe le Kolosso
+  - Le tenir à l'écart pendant qu'on tue les autres
+  - Jamais derrière un allié dans l'axe du cône
+alertes:
+  - { quand: kolosso_au_contact, texte: "Cône infini : pas derrière un allié", niveau: critique }
+  - { quand: etat_invulnerable, texte: "Frappez-le avec une invocation", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14649/cavernes-kolosso]

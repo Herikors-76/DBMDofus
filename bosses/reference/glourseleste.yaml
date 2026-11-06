@@ -1,0 +1,28 @@
+id: glourseleste
+nom: Glourséleste
+type: donjon
+contenu: Antichambre des Gloursons
+niveau: 190
+position: "-52,-44"
+pv: "11000-17000"
+etats: [Invulnérable sauf au corps à corps]
+sorts:
+  - { nom: Gloursondulation, effet: "1 à 5 PO, air + échange" }
+  - { nom: Gloursombre, effet: "Corps à corps, eau = 10 % de ses PV manquants" }
+  - { nom: Rattrapage, effet: "S'applique Lourd, -100 tacle" }
+  - { nom: Petit Glours Brun, effet: "Ressuscite le dernier monstre mort à 100 %, après une poussée/attirance/entrave" }
+mecaniques:
+  - { nom: Poussée mortelle, declencheur: dommages de poussée subis ou infligés, effet: "Tue le perso concerné" }
+  - { nom: Réinvocation, declencheur: pousser/attirer/retirer le Glourséleste, effet: "Réinvoque les monstres tués, pleine vie" }
+  - { nom: Glouragan, declencheur: Glouragan frappé avec une entité alignée, effet: "Attire les entités alignées" }
+  - { nom: Taclours, declencheur: se détacler d'un monstre Taclours, effet: "Mort du perso et de ceux à son contact (sauf 100 % fuite)" }
+  - { nom: Vulnérabilité, declencheur: attaque au corps à corps du boss, effet: "Vulnérable pendant votre tour ; pousse de 4 les entités alignées à 4 PO" }
+strategie:
+  - Placement soigné loin des murs
+  - Frapper au corps à corps avec un sort peu coûteux en PA
+  - Ne pas frapper le Glouragan aligné avec le boss
+alertes:
+  - { quand: permanent, texte: "AUCUNE poussée : mort immédiate", niveau: critique }
+  - { quand: etat_monstre, etat: Taclours, texte: "Ne vous détaclez pas d'un Taclours", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14650/antichambre-gloursons]

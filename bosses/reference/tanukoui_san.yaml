@@ -1,0 +1,20 @@
+id: tanukoui_san
+nom: Tanukouï San
+type: donjon
+contenu: Donjon des Kitsounes
+niveau: 130
+position: "32,-37"
+pv: "3500-5100"
+sorts:
+  - { nom: Tanukick, effet: "Gros dégâts terre, cercle de 2 autour de lui" }
+  - { nom: Phéromone, effet: "Invoque une Tanuki Chan" }
+  - { nom: Tanushi, effet: "Gros dégâts air, zone de 2, 2 à 10 PO, -PA" }
+mecaniques:
+  - { nom: Poussée, declencheur: poussé par une Tanuki Chan contre un obstacle, effet: "Très lourds dommages de poussée" }
+strategie:
+  - Escorte puis Tanukis puis boss
+  - Loin des murs et obstacles
+alertes:
+  - { quand: fin_tour_joueur, texte: "Pas collé à un obstacle", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13886/donjon-kitsounes]

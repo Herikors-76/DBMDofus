@@ -1,0 +1,62 @@
+# Gigalodon : boss final du raid de guilde « Gouffre du Gigalodon » (màj 3.6).
+# Module chargé par l'appli. Relevé complet (sorts, stats, sources) : bosses/reference/gigalodon.yaml
+# Limite du modèle actuel : la 2ᵉ action du boss (à mi-tour) et la décision du glyphe noir
+# sont annoncées à chaque tour, faute de déclencheur « mi-tour » dans le chargeur.
+id: gigalodon
+nom: Gigalodon
+doc: docs/bosses/gigalodon.md
+
+phases:
+  - id: p1
+    nom: Combat (3 tours)
+    debut: {tour: 1}
+
+mecaniques:
+  - id: placement
+    nom: Placement
+    tours: [1]
+    alerte:
+      texte: "3 cases d'écart · diagonale · loin des bords"
+      niveau: important
+
+  - id: deuxieme_action
+    nom: Double jeu
+    tous_les: 1
+    a_partir_de: 1
+    alerte:
+      texte: "2ᵉ action du boss à mi-tour"
+      niveau: important
+
+  - id: glyphe_noir
+    nom: Les dents de l'amer
+    tous_les: 1
+    a_partir_de: 2
+    alerte:
+      texte: "Glyphe noir : qui dessus ?"
+      niveau: critique
+
+  - id: burst_boosts
+    nom: Plan de burst (boosts)
+    tours: [1]
+    alerte:
+      texte: "Tour 1 : boosts"
+      niveau: info
+
+  - id: burst_debuffs
+    nom: Plan de burst (retraits de résistances)
+    tours: [2]
+    alerte:
+      texte: "Tour 2 : retraits de résistances"
+      niveau: info
+
+  - id: dernier_tour
+    nom: Dernier tour
+    tours: [3]
+    alerte:
+      texte: "Dernier tour : tout le burst !"
+      niveau: action
+      avance: 1
+
+strategie: |
+  Score = dégâts infligés en 3 tours. Mono-cible (les zones ne le touchent qu'une fois).
+  Gigarâle : 3 cases entre alliés. Ultrasplash : diagonale. Tournageoire : loin des bords.

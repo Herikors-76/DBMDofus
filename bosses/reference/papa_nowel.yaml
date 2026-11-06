@@ -1,0 +1,21 @@
+id: papa_nowel
+nom: Papa Nowel
+type: donjon
+contenu: Caverne de Nowel
+niveau: 110
+position: "-36,-39 (Île de Nowel)"
+sorts:
+  - { nom: Trak'nenfan, effet: "Cadeaux aléatoires : explosion, attraction ou téléportation" }
+  - { nom: Gobage, effet: "Corps à corps, ~70" }
+  - { nom: Engluement, effet: "-PM" }
+  - { nom: Aspir'nenfan, effet: "Attire une cible à 4 cases" }
+  - { nom: Dichotomie, effet: "Crée un Demi Papa Nowel ; état Séparé, ne fait plus que Gobage" }
+mecaniques:
+  - { nom: Régénération, declencheur: sous 1 500 PV, effet: "Se soigne entièrement, état Fragilisé" }
+strategie:
+  - Rester à plus de 4 cases
+  - Pour finir le combat, ne tuer que le bas du corps
+alertes:
+  - { quand: seuil_pv, valeurs: [1500], texte: "Papa Nowel se régénère (Fragilisé)", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13894/caverne-nowel]

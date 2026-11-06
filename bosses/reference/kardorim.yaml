@@ -1,0 +1,17 @@
+id: kardorim
+nom: Kardorim
+type: donjon
+contenu: Crypte de Kardorim
+niveau: 10
+position: "5,-1 (Incarnam)"
+pv: "140-200"
+sorts:
+  - { nom: Casse-crâne, effet: "~50 au contact" }
+  - { nom: Craquement d'Os, effet: "+2 PM aux alliés proches" }
+  - { nom: Appel de Kardorib, effet: "Un Kardorib à la fois" }
+strategie:
+  - Foncer sur lui
+alertes:
+  - { quand: debut_combat, texte: "Focus Kardorim", niveau: info }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13985/crypte-kardorim]

@@ -1,0 +1,23 @@
+id: larve_de_koutoulou
+nom: Larve de Koutoulou
+type: donjon
+contenu: Temple de Koutoulou
+niveau: 200
+position: "27,26"
+pv: "18000-26000"
+sorts:
+  - { nom: Frappe Koutonienne, effet: "Corps à corps, gros dégâts terre, augmente la Folie" }
+  - { nom: Permutation Inquiétante, effet: "1 à 6 PO, échange avec un allié ; 2 fois par tour dès le tour 2" }
+mecaniques:
+  - { nom: Téléportation, declencheur: adversaire en ligne de vue, effet: "Le téléporte à son contact" }
+  - { nom: Échange, declencheur: chaque dégât sur un monstre, effet: "Votre perso échange avec l'entité la plus proche" }
+  - { nom: Invulnérabilité, declencheur: 2 échanges avec le même monstre, effet: "Ce monstre est invulnérable jusqu'à votre prochain tour" }
+  - { nom: Folie, declencheur: 2+ échanges avec le même allié, effet: "Vos Folies augmentent" }
+strategie:
+  - Se cacher (obstacles, monstres, invocations)
+  - Klûtiste en premier, puis Shokkoth
+alertes:
+  - { quand: fin_tour_joueur, texte: "Hors de la ligne de vue de la Larve", niveau: critique }
+  - { quand: degats_monstre, texte: "Pas 2 échanges avec le même monstre", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14667/temple-koutoulou]

@@ -1,0 +1,30 @@
+id: nileza
+nom: Nileza
+type: donjon
+contenu: Laboratoire de Nileza
+niveau: 200
+position: "-61,-74 (Château du Comte)"
+pv: "13000-19000"
+sorts:
+  - { nom: Glace sèche, effet: "Portée 2, échange + ~600 feu en zone de 2" }
+  - { nom: Liqueur de Fée Ling, effet: "+300 dégâts et +5 % de vitalité max par coup au corps à corps ; 2 tours, tous les 3 tours" }
+  - { nom: Fraction de molaire, effet: "Ligne longue portée, poussée de 3, eau + terre (500 → 900 → 1 300)" }
+mecaniques:
+  - { nom: Ovagodra, declencheur: attaque à distance sur Nileza, effet: "Échange avec l'agresseur" }
+  - { nom: Molalité illéplochable, declencheur: après l'échange, effet: "Renvoi air en rayon 2 (alliés ET ennemis) + 40 % d'érosion" }
+  - { nom: Chifouchimie, declencheur: joueur au contact d'un allié, effet: "Mort instantanée" }
+  - { nom: Alchymne à la joie, declencheur: dès le tour 3, effet: "Allié à plus de 11 cases = Pacifiste 2 tours" }
+  - { nom: Gromation, declencheur: dès le tour 5, effet: "Zone de sûreté réduite à 9 cases" }
+  - { nom: Carba Gnion, declencheur: dès le tour 7, effet: "Zone de sûreté réduite à 7 cases" }
+  - { nom: Calbalcaloïde, declencheur: "tour 9, 2 tours sur 3", effet: "Allié à plus de 5 cases = Pacifiste ; tous Insoignables" }
+strategie:
+  - La tuer au corps à corps pendant le creux de Fée Ling (tours 3, 6, 9)
+  - Ou attaquer à distance pour renvoyer les dégâts sur les monstres, sans allié à moins de 4 cases
+alertes:
+  - { quand: permanent, texte: "JAMAIS au contact d'un allié (mort)", niveau: critique }
+  - { quand: debut_tour, tours: [3], texte: "Restez à moins de 11 cases de Nileza", niveau: important }
+  - { quand: debut_tour, tours: [5], texte: "Zone réduite : 9 cases", niveau: important }
+  - { quand: debut_tour, tours: [7], texte: "Zone réduite : 7 cases", niveau: important }
+  - { quand: debut_tour, tours: [9], texte: "Moins de 5 cases de Nileza, plus de soins", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/12154/laboratoire-nileza]

@@ -1,0 +1,24 @@
+id: koumiho
+nom: Koumiho
+type: donjon
+contenu: Demeure des Esprits
+niveau: 170
+position: "39,-44"
+pv: "8800-13000"
+etats: [Invulnérable tant que ses 2 Kitsounebis ne meurent pas le même tour]
+sorts:
+  - { nom: Hoshi no tama, effet: "Soigne ses alliés de 20 % PV max" }
+  - { nom: No raj, effet: "-PO, -PM, -intelligence 1 tour" }
+  - { nom: Aura des Kitsounebi, effet: "Feu, air, terre à tous les adversaires" }
+  - { nom: Retraite, effet: "Tous les 6 tours : invisible + Pacifiste, puis soin + bouclier" }
+mecaniques:
+  - { nom: Kitsounebis invisibles, declencheur: dès le tour 2, effet: "Visibles seulement dans la zone de la Lanterne des Spiritueurs" }
+  - { nom: Réinvocation, declencheur: Kitsounebi tué sans son jumeau, effet: "Koumiho le fait revenir" }
+strategie:
+  - Madura puis Bakazako d'abord (partage de dégâts)
+  - Repérer les Kitsounebis (Lanterne) et les tuer le même tour
+alertes:
+  - { quand: mort_kitsounebi, texte: "Tuez son jumeau CE tour", niveau: critique }
+  - { quand: tous_les_6_tours, texte: "Retraite : Koumiho invisible", niveau: info }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14909/demeure-esprits-koumiho-yokai-neuf-queues-ile-grobe-dofus-257]

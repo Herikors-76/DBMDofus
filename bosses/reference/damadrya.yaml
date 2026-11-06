@@ -1,0 +1,18 @@
+id: damadrya
+nom: Damadrya
+type: donjon
+contenu: Bambusaie de Damadrya
+niveau: 110
+position: "26,-30"
+pv: "5000-6600"
+sorts:
+  - { nom: Aubépine, effet: "À distance, dégâts + -1 PM" }
+  - { nom: Urticaire, effet: "Croix de 2, -50 puissance jusqu'à la fin du combat" }
+  - { nom: Bourgeonnement, effet: "Invoque un Bourgeon qui explose à votre contact" }
+strategie:
+  - Surveiller les entraves (PM, puissance)
+  - Tuer les Bourgeons avant qu'ils arrivent
+alertes:
+  - { quand: bourgeon_invoque, texte: "Bourgeon : tuez-le avant qu'il vous touche", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14903/bambusaie-damadrya]

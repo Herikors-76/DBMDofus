@@ -17,8 +17,13 @@ dbmdofus/
   ocr.py          Lecture(valeur, confiance), moteur OCR enfichable, détection de motif
   hotkeys.py      raccourcis globaux (pynput) -> signal Qt
   overlay.py      fenêtre transparente, au premier plan, clics traversants
-bosses/<boss>.yaml    données d'un boss
+bosses/<boss>.yaml    module d'un boss (format du chargeur : phases, mécaniques par tour, alertes)
 docs/bosses/<boss>.md doc lisible du boss
+bosses/reference/<id>.yaml      relevé des mécaniques (131 boss : raids + donjons), NON chargé par l'appli
+docs/bosses/reference/<id>.md   doc générée depuis la fiche de référence
+outils/valider_reference.py     validation des fiches de référence (+ couverture de l'index des donjons)
+outils/generer_docs_reference.py génère docs/bosses/reference/*.md (n'écrase pas une doc manuelle)
+outils/sources/index_donjons.tsv index des 122 donjons (boss, niveau, position, URL du guide)
 outils/carte_index.py génère §7
 tests/                pytest (+ tests/fixtures/ : captures PNG pour l'OCR)
 ```
@@ -66,6 +71,15 @@ phases (`debut: {tour: N}` ou rien pour une phase manuelle), mécaniques (`tours
 `a_partir_de`, `phase` facultative, `alerte: {texte, niveau, avance}`) ; écrire `docs/bosses/<id>.md` ;
 `pytest` ; `graphify update . && graphify cluster-only .` ; `python outils/carte_index.py`.
 Niveaux : `info`, `important`, `critique`, `action`.
+
+**Passer un boss de la référence au module** : partir de `bosses/reference/<id>.yaml` (sorts, mécaniques,
+`alertes` en texte libre), écrire `bosses/<id>.yaml` au format du chargeur ; garder les textes d'alerte
+courts (≈ 35 caractères : l'overlay ne gère pas encore les retours à la ligne). Exemple : `gigalodon`.
+
+**Fiches de référence** : obligatoires `id`, `nom`, `type` (`donjon`|`raid_guilde`), `contenu`,
+`fiabilite` (`confirme`|`source_unique`|`a_verifier`), `sources` ; `python outils/valider_reference.py`
+puis `python outils/generer_docs_reference.py`. Mise en garde : les donjons viennent surtout de guides
+JeuxOnLine écrits avant Dofus 3, à vérifier en jeu.
 
 **Raccourcis par défaut** : Ctrl+Alt+D début · F fin · N tour suivant · B tour précédent · P phase suivante · M boss suivant.
 
@@ -116,6 +130,12 @@ Niveaux : `info`, `important`, `critique`, `action`.
   - `index_bosses()` (l.41)
   - `generer()` (l.51)
   - `main()` (l.61)
+- `outils/generer_docs_reference.py` — Génère docs/bosses/reference/<id>.md à partir de bosses/reference/<id>.yaml.
+  - `_liste()` (l.15)
+  - `rendre()` (l.21)
+  - `main()` (l.45)
+- `outils/valider_reference.py` — Vérifie les fiches de référence bosses/reference/*.yaml (relevé des mécaniques, pas des modules
+  - `main()` (l.23)
 - `tests/conftest.py`
   - `qapp()` (l.9)
 - `tests/test_bosses.py`
@@ -141,10 +161,15 @@ Niveaux : `info`, `important`, `critique`, `action`.
   - `test_fixtures_lisibles()` (l.41)
 - `tests/test_overlay.py`
   - `test_overlay_rendu()` (l.8)
+- `tests/test_reference.py` — Fiches de référence (bosses/reference/) : valides, documentées, invisibles pour le chargeur.
+  - `test_fiches_reference_valides()` (l.11)
+  - `test_chaque_fiche_a_sa_doc()` (l.19)
+  - `test_reference_non_chargee_comme_module()` (l.25)
 - `tests/test_regles.py` — Règles du projet vérifiées automatiquement.
   - `test_aucune_couleur_en_dur_hors_theme()` (l.10)
   - `test_cgu_pas_de_memoire_paquets_ni_actions()` (l.16)
 
 ### Boss
 - `bosses/exemple.yaml` — Gardien d'exemple : 3 phase(s), 3 mécanique(s), doc `docs/bosses/exemple.md`
+- `bosses/gigalodon.yaml` — Gigalodon : 1 phase(s), 6 mécanique(s), doc `docs/bosses/gigalodon.md`
 <!-- INDEX:FIN -->

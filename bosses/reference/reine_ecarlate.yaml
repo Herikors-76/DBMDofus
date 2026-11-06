@@ -1,0 +1,52 @@
+id: reine_ecarlate
+nom: Reine Écarlate
+type: raid_guilde
+contenu: Sanctuaire des Jardins éternels (boss final)
+joueurs: { max: 4 }
+etats_permanents: [Lourd, Inérodable]
+regles:
+  - Pesanteur renvoyée sur l'équipe pendant 1 tour
+  - Ne traverse pas les portails Éliotrope
+phases:
+  - id: 1
+    pv: 50000
+    seuil_pv: 1
+    fin: Soin complet, passage en phase 2
+  - id: 2
+    invulnerable_jusqu_a: mort du Pommeau Enraciné ET de la Lame Fleurie
+    double_jeu: true
+    invocations:
+      - { nom: Volonté de la Princesse, pv: 30000, note: "Invulnérable jusqu'à la fin de son 1er tour ; Lien Familial (partage des dégâts)" }
+      - { nom: Pommeau Enraciné, pv: 5500, note: "Invulnérable 1 tour ; à sa mort : +5 % de dégâts finaux pour la Reine" }
+      - { nom: Lame Fleurie, pv: 5500, note: "Invulnérable 1 tour ; à sa mort : +10 % de critique pour la Reine" }
+    glyphes: Glyphe vert autour du Pommeau et de la Lame, air = 10 % des PV actuels (entrée/début/fin de tour) ; un personnage sur une case d'apparition est tué
+cachots:
+  nombre: 4
+  regles:
+    - 2 monstres par cachot au départ (Tritulipe HG, Fracamélia HD, Muguégide BG, Dahliane BD) ; à 6 joueurs ou moins, les cachots vides restent vides
+    - Les monstres d'un même cachot partagent leurs dégâts ; chaque cachot est un combat à part
+    - Les 8 monstres morts → tout le monde est téléporté dehors et soigné ; finir le dernier avec le perso qui joue juste après la Reine
+  floracle: { pv: 5000, seuil_pv: 1, degats_subis: "+100 %", effet: "Seuil atteint = libère le captif, puis retour à 5 000 PV" }
+sorts:
+  - { nom: Exil Impérial, effet: "850 terre + envoi dans un cachot aléatoire ; portée 8 sans ligne de vue, 1 fois par tour. Le captif passe ses tours et perd 10 % de ses PV actuels (terre) par tour" }
+  - { nom: Châtiment Royal, effet: "Différé 2 tours : 500 dans tous les éléments à tous hors cachot, +200 par perso en cachot ; soigne la Reine de 500 +200 par cachot occupé ; relance 3 tours" }
+  - { nom: Couronnyx, effet: "1 300 terre en cercle de taille 2 autour d'elle, +400 bouclier par perso touché ; 1 fois par tour" }
+  - { nom: Écarlutte, effet: "700 eau en vol de vie, vole 50 tacle 1 tour ; portée 5 sans ligne de vue, 4 fois par tour" }
+  - { nom: Épécarlate, effet: "900 feu en ligne de taille 5 + poison feu de 10 % des PV érodés pendant 2 tours ; corps à corps, relance 2 tours" }
+  - { nom: Exécution de l'Évadé, effet: "Feu = 10 % des PV actuels, +2 200 si la cible est Évadé ; corps à corps, 4 fois par tour" }
+  - { nom: Sanfroiyal, effet: "Téléportation, attire à 5 cases dans une croix de taille 6, 950 air, -100 fuite ; portée 6, 1 fois par tour" }
+  - { nom: Supremasiège, effet: "Échange de place, 20 % d'érosion 1 tour, 1 000 air en vol de vie ; portée 2 à 5, 2 fois par tour" }
+etats_joueurs:
+  - { nom: Évadé, duree: 1, effet: "Après libération ; vulnérable à Exécution de l'Évadé" }
+  - { nom: "Immunité : Exil Impérial", duree: 2 }
+strategie:
+  - Phase 1 : tuer les monstres d'abord, garder le Floracle bas (≤ 1 000 PV), anticiper Châtiment Royal
+  - Phase 2 : tuer la Volonté en premier, puis Pommeau et Lame
+  - Ne libérer que les persos qui jouent avant la Reine
+  - L'enraciner (Stabilisation Pandawa) contre l'échange ; Féca/Zobal contre Châtiment Royal
+alertes:
+  - { quand: { evenement: sort_lance, sort: Châtiment Royal }, texte: "Châtiment Royal dans 2 tours : protections", niveau: critique }
+  - { quand: { evenement: seuil_pv, valeurs: [1] }, texte: "Phase 2 : la Reine joue 2 fois, tuez la Volonté", niveau: critique }
+  - { quand: { evenement: etat_joueur, etat: Évadé }, texte: "Évadé : reste loin du corps à corps de la Reine", niveau: important }
+fiabilite: source_unique
+sources: [https://www.dofuspourlesnoobs.com/sanctuaire-des-jardins-eternels.html]

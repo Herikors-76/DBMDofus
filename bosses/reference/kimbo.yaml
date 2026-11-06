@@ -1,0 +1,23 @@
+id: kimbo
+nom: Kimbo
+type: donjon
+contenu: Canopée du Kimbo
+niveau: 160
+position: "-54,16"
+pv: "6900-10000"
+sorts:
+  - { nom: Boum Boh, effet: "Change d'état selon l'élément reçu, +50 agilité 3 tours" }
+  - { nom: Téléportation du Kimbo, effet: "Téléportation, portée 8" }
+  - { nom: Furie du Kimbo, effet: "Corps à corps, poussée de 2, air en vol de vie" }
+mecaniques:
+  - { nom: Disciple, declencheur: tour 1, effet: "Invoqué, pose un damier de glyphes" }
+  - { nom: Glyphe mortel, declencheur: glyphe du Disciple sous vos pieds, effet: "Mort instantanée" }
+  - { nom: Pair/impair, declencheur: état du Kimbo, effet: "Feu/Air : évitez les cases impaires ; Terre/Eau : allez sur les paires. Kimbo sur un glyphe = perd ses résistances" }
+  - { nom: Déplacement du Disciple, declencheur: chaque déclenchement, effet: "+1 PM et avance d'une case" }
+strategie:
+  - Ne pas frapper Kimbo avant d'avoir tué les monstres
+  - Recalculer la position du Disciple chaque tour
+alertes:
+  - { quand: debut_tour_joueur, texte: "Vérifiez le damier : pair ou impair ?", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13867/canopee-kimbo]

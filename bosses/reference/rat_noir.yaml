@@ -1,0 +1,20 @@
+id: rat_noir
+nom: Rat Noir
+type: donjon
+contenu: Donjon des Rats de Brâkmar
+niveau: 110
+position: "-26,31"
+pv: "3500-5600"
+sorts:
+  - { nom: Peste Noire, effet: "1 à 6 PO, air = 50 % de ses PV ; le prochain ennemi qui frappe la cible la tue en un coup" }
+  - { nom: Kackitu, effet: "Tue la cible si elle est adjacente au Rat Noir" }
+  - { nom: Kackisoigne, effet: "1 à 8 PO, soin" }
+  - { nom: Rafale, effet: "Corps à corps, élémentaire en vol de vie" }
+strategie:
+  - Désenvoûter l'allié touché par Peste Noire, entraver les monstres
+  - Tuer le Rat Noir tôt ou lui retirer de la PO
+alertes:
+  - { quand: etat_joueur, etat: Peste Noire, texte: "Peste Noire : désenvoûtez, protégez-le", niveau: critique }
+  - { quand: fin_tour_joueur, texte: "Jamais au contact du Rat Noir (Kackitu)", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13881/donjon-rats-brakmar]

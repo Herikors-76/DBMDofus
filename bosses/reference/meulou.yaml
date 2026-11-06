@@ -1,0 +1,19 @@
+id: meulou
+nom: Meulou
+type: donjon
+contenu: Tanière du Meulou
+niveau: 100
+position: "-24,1"
+pv: "5700-8400"
+etats: [La 1re attaque de chaque perso à chaque tour est sans effet]
+sorts:
+  - { nom: Étripage, effet: "Neutre au contact" }
+  - { nom: Invocation de Milimeulou, effet: "Terre, -fuite au contact ; remplace une invocation par un Mulou ; à sa mort, monstres +2 PM +200 puissance 2 tours" }
+  - { nom: Rage Reconstituante, effet: "Tous les 6 tours dès le tour 2 : gros soin, +2 PM, +20 tacle" }
+strategie:
+  - Petit sort pas cher d'abord, puis le gros coup
+alertes:
+  - { quand: debut_tour_joueur, texte: "1er sort = sort à 1 PA (absorbé)", niveau: important }
+  - { quand: tous_les_6_tours_des_tour_2, texte: "Rage Reconstituante : gros soin", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13854/donjon-canides]

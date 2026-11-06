@@ -1,0 +1,29 @@
+id: comte_harebourg
+nom: Comte Harebourg
+type: donjon
+contenu: Tour de la Clepsydre
+niveau: 200
+position: "-66,-79 (Château du Comte)"
+pv: "13000-20000"
+etats: [Invulnérable sauf échange de place avec un allié un tour pair]
+sorts:
+  - { nom: Mi-temps, effet: "Au début de son tour, glyphe mortel de 3 cases en ligne ; case centrale épargnée" }
+  - { nom: Contretemps, effet: "1 à 14 PO, terre + eau = 7 % des PV manquants du lanceur ; se téléporte à sa position de début de tour" }
+  - { nom: Multicomte, effet: "Si vulnérable : 1 à 6 PO en ligne ou 3 en diagonale, feu en anneau de 3 à 5 cases, illusions, fin de son tour" }
+  - { nom: Jaquemart, effet: "Si invulnérable : 1 à 4 PO sans ligne de vue, eau en vol de vie, -3 PA (4 en critique)" }
+mecaniques:
+  - { nom: Vulnérabilité, declencheur: tour pair, effet: "Vulnérable seulement via un échange de place avec un allié, un tour sur deux" }
+  - { nom: Symétrie, declencheur: frapper le Comte, effet: "Tour impair : le joueur est déplacé en symétrie du boss ; tour pair : le boss est déplacé en symétrie du joueur" }
+  - { nom: Confusions horaires, declencheur: début du tour d'un perso, effet: "Rouge (100-75 % PV), bleue (75-25 %), verte (25-0 %) : déviation angulaire des attaques" }
+  - { nom: Case noire, declencheur: boss téléporté sur un obstacle ou une case noire, effet: "Toute l'équipe meurt" }
+strategie:
+  - Tour pair, se placer sur l'axe de symétrie entre le boss et un allié puis le frapper
+  - Maîtriser les angles de confusion avant le combat
+  - Quitter le glyphe Mi-temps avant son tour
+  - Jamais de placement qui pourrait l'envoyer sur une case noire
+alertes:
+  - { quand: debut_tour_boss, texte: "Sortez du glyphe Mi-temps", niveau: critique }
+  - { quand: tour_pair, texte: "Tour pair : échange avec un allié pour le rendre vulnérable", niveau: important }
+  - { quand: tour_impair, texte: "Tour impair : attention aux cases noires avant de frapper", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13413/donjon-comte-harebourg]

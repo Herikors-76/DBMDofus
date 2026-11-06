@@ -1,0 +1,26 @@
+id: grolloum
+nom: Grolloum
+type: donjon
+contenu: Mine de Sakaï
+niveau: 190
+position: "-63,-75"
+pv: "11000-16000"
+etats: [Invulnérable tant qu'aucun de ses alliés n'est mort]
+sorts:
+  - { nom: Banquise, effet: "Mêlée en ligne de 3, eau en vol de vie, -PO, soigne le boss" }
+  - { nom: Gelée blanche, effet: "1 à 6 PO, +200 dégâts à la cible ; sur un ressuscité, état Gelée Blanche" }
+  - { nom: Frimas, effet: "1 à 4 PO, échange, feu + 10 % des PV manquants" }
+  - { nom: Cycle, effet: "5 à 10 PO, réinvoque le dernier allié mort à 13 % PV" }
+mecaniques:
+  - { nom: Vulnérabilité, declencheur: monstre Gelée Blanche tué au contact du boss, effet: "Lève l'invulnérabilité" }
+  - { nom: Résistances, declencheur: retrait de PM sur le boss, effet: "Gros gain de résistances fixes" }
+strategie:
+  - Tuer un monstre d'abord
+  - Tuer le monstre Gelée Blanche au contact du boss
+  - Garder le Gobus pour la fin
+alertes:
+  - { quand: retrait_pm_boss, texte: "Pas de retrait PM sur Grolloum", niveau: important }
+  - { quand: etat_monstre, etat: Gelée Blanche, texte: "Tuez-le au contact du boss", niveau: critique }
+  - { quand: alignement_gobus, texte: "Pas aligné avec le Gobus", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13897/mine-sakai]

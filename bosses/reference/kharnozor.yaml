@@ -1,0 +1,20 @@
+id: kharnozor
+nom: Kharnozor
+type: donjon
+contenu: Repaire du Kharnozor
+niveau: 100
+position: "-3,25"
+pv: "5700-7100"
+sorts:
+  - { nom: Emplafonnement, effet: "Avance vers la cible, terre, poussée de 6" }
+  - { nom: Cri déchirant, effet: "Air en cercle, -3 PA ; seulement s'il y a des invocations" }
+  - { nom: Mort sûre, effet: "Contact, terre, Insoignable + Pesanteur" }
+mecaniques:
+  - { nom: Riposte, declencheur: l'attaquer à 2 cases ou moins, effet: "~250 terre" }
+  - { nom: Dragoss, declencheur: Dragoss tué, effet: "Le renforce" }
+strategie:
+  - Hors de son contact, à distance
+alertes:
+  - { quand: avant_attaque_boss, texte: "Frappez-le à plus de 2 cases (riposte)", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14748/repaire-kharnozor]

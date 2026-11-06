@@ -1,0 +1,23 @@
+id: nagate
+nom: Nagate
+type: donjon
+contenu: Vallée de la Dame des Eaux
+niveau: 130
+position: "22,-24"
+pv: "4900-6900"
+sorts:
+  - { nom: Eau fraîche, effet: "Soigne ses alliés" }
+  - { nom: Hatsunamiku, effet: "Eau sur tous vos persos" }
+  - { nom: Hors de ma vue, effet: "Air sans ligne de vue + téléportation de l'autre côté de la cascade" }
+  - { nom: Colère bouillonnante, effet: "Feu au contact" }
+mecaniques:
+  - { nom: Cascade, declencheur: attaque à distance, effet: "Nagate l'ignore : il faut la frapper au contact" }
+  - { nom: Bombombre à Eau, declencheur: frapper au contact un Bombombre bloqué, effet: "Téléportation symétrique près de Nagate" }
+  - { nom: Kwamouraï, declencheur: vivant, effet: "Invoque des Bombombres à Eau" }
+strategie:
+  - Révérence sur le Kwamouraï pour placer le Bombombre
+  - Agilité / déplacements pour frapper puis fuir
+alertes:
+  - { quand: debut_combat, texte: "Nagate se frappe au contact uniquement", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14906/vallee-dame-eaux-nagate, https://www.millenium.org/guide/369649.html]

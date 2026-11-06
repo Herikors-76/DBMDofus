@@ -1,0 +1,20 @@
+id: gelees_royales
+nom: Gelées Royales
+type: donjon
+contenu: Donjon des Gelées
+niveau: 60
+position: Gélaxième Dimension
+pv: "1300-2000 (chacune)"
+boss: [Gelée Royale Bleue, Gelée Royale Citron, Gelée Royale Fraise, Gelée Royale Menthe]
+sorts:
+  - { nom: Invocation, effet: "Invoque une gelée de sa couleur" }
+  - { nom: Réduction, effet: "Réduit ses dégâts subis" }
+  - { nom: Os, effet: "Dégâts élémentaires + retrait de caractéristique (eau/chance, air/agilité, feu/intelligence, terre/force)" }
+mecaniques:
+  - { nom: Faiblesse, declencheur: permanent, effet: "Chaque Royale est vulnérable à un élément précis" }
+strategie:
+  - Persos multi-éléments
+alertes:
+  - { quand: debut_combat, texte: "Frappez chaque Gelée dans son élément faible", niveau: info }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13879/donjon-gelees]

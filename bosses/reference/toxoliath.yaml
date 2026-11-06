@@ -1,0 +1,22 @@
+id: toxoliath
+nom: Toxoliath
+type: donjon
+contenu: Cave du Toxoliath (dimension Srambad)
+niveau: 180
+position: "8,8 (Srambad)"
+pv: "9700-14000"
+sorts:
+  - { nom: Venin Salvateur, effet: "Dégâts subis par tous les ennemis portés à 150 %" }
+  - { nom: Poison volatile, effet: "Boost feu, -PA +PM 2 tours" }
+  - { nom: Vile ruse, effet: "1 à 7 PO, air + poison air 5 tours" }
+  - { nom: Flacune, effet: "Neutre + érosion + poison neutre selon les PA utilisés" }
+mecaniques:
+  - { nom: Poison au contact, declencheur: frapper le Toxoliath, effet: "Poison selon les PM utilisés avant/après, 2 tours, cumulable, sur l'attaquant" }
+  - { nom: Vagues, declencheur: vague vidée, effet: "Vague suivante, invulnérable jusqu'à son 1er tour (5 vagues, le boss dans la 1re)" }
+strategie:
+  - Ne pas bouger après l'avoir frappé (Éliotrope utile)
+  - Prévoir du soin
+alertes:
+  - { quand: apres_coup_boss, texte: "Ne bougez plus : poison selon les PM", niveau: critique }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14679/cave-toxoliath, https://www.millenium.org/guide/161163.html]

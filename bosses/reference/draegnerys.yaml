@@ -1,0 +1,19 @@
+id: draegnerys
+nom: Draegnerys
+type: donjon
+contenu: Épreuve de Draegnerys
+niveau: 70
+position: "-4,29"
+pv: 1400
+sorts:
+  - { nom: Somatotropine, effet: "Boost un Dragoeuf (PA, PM, vitalité, puissance) 2 tours et l'agrandit" }
+  - { nom: Knout, effet: "Feu, recul de 2" }
+  - { nom: Drakaaris, effet: "Feu, 1 à 10 PO" }
+mecaniques:
+  - { nom: Audacieux / Intrépide, declencheur: début du tour d'un Dragoeuf, effet: "Audacieux, puis Intrépide 2 tours plus tard (bonus plus forts)" }
+strategie:
+  - Draegnerys en priorité
+alertes:
+  - { quand: debut_combat, texte: "Focus Draegnerys", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14747/epreuve-draegnerys]

@@ -1,0 +1,19 @@
+id: nelween
+nom: Nelween
+type: donjon
+contenu: Laboratoire de Brumen Tinctorias
+niveau: 70
+position: "-27,17"
+pv: "1900-2700"
+sorts:
+  - { nom: Mord Mollet, effet: "Contact, terre, -2 PM" }
+  - { nom: Soin Diffus, effet: "Neutre en vol de vie" }
+  - { nom: Exhalation Toxique, effet: "Zone de 3 autour de lui, -30 % de résistances" }
+mecaniques:
+  - { nom: Interception, declencheur: effet de Nelween, effet: "Vous encaissez les dégâts des monstres proches" }
+strategie:
+  - Pas au contact de Nelween, loin des autres monstres
+alertes:
+  - { quand: fin_tour_joueur, texte: "Loin de Nelween et des monstres", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13856/laboratoire-brumen-tinctorias]

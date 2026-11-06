@@ -1,0 +1,24 @@
+id: founoroshi
+nom: Founoroshi
+type: donjon
+contenu: Fabrique de Foux d'Artifice
+niveau: 140
+position: "14,-32"
+pv: "4200-6100"
+etats: [Invulnérable tant que les Feux de Bengale sont allumés]
+sorts:
+  - { nom: Fumée alourdissante, effet: "Phase invulnérable" }
+  - { nom: Lanternes volantes, effet: "Phase invulnérable" }
+  - { nom: Pétards volants, effet: "Phase vulnérable" }
+mecaniques:
+  - { nom: Extinction des Feux, declencheur: marcher sur un glyphe gris, effet: "Puis marcher sur un Feu l'éteint ; 8 Feux éteints = monstres vulnérables" }
+  - { nom: Lanternes, declencheur: tous les 4 tours, effet: "Si une lanterne atteint un Feu, l'équipe meurt" }
+strategie:
+  - Éteindre un Feu dès le tour 1
+  - Résister aux retraits PA/PM (Boumbardier)
+alertes:
+  - { quand: tous_les_4_tours, texte: "Lanternes : empêchez-les d'atteindre un Feu !", niveau: critique }
+  - { quand: debut_tour_joueur, texte: "Glyphe gris → Feu", niveau: info }
+compteurs: [{ nom: feux_eteints, cible: 8 }]
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14902/fabrique-foux-artifice, https://www.millenium.org/guide/369742.html]

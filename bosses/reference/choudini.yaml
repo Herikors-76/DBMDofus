@@ -1,0 +1,17 @@
+id: choudini
+nom: Choudini
+type: donjon
+contenu: Chapiteau des Magik Riktus
+niveau: 90
+position: "-22,12"
+pv: "2900-4300"
+sorts:
+  - { nom: Reste assis, effet: "-20 tacle + poison : perte de PV à chaque déplacement" }
+  - { nom: Vinriktus, effet: "Eau, -2 PM 1 tour, échange avec la cible" }
+  - { nom: Détriktus, effet: "Air en croix de 3, repousse" }
+strategie:
+  - Il fuit et échange souvent : l'entraver
+alertes:
+  - { quand: etat_joueur, etat: Reste assis, texte: "Reste assis : bougez le moins possible", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/14586/chapiteau-magik-riktus]

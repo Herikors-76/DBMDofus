@@ -1,0 +1,18 @@
+id: bworkette
+nom: Bworkette
+type: donjon
+contenu: Donjon des Bworks
+niveau: 40
+position: "-5,-10"
+pv: "1600-2300"
+sorts:
+  - { nom: Abolissement, effet: "Gros neutre tous les 5 tours" }
+  - { nom: Mot Croisé, effet: "Feu en croix, soigne ses alliés" }
+  - { nom: Reconstitution Bwork, effet: "Soin total puis Insoignable 3 tours" }
+strategie:
+  - Lui faire lancer Reconstitution, puis la tuer pendant qu'elle est insoignable
+alertes:
+  - { quand: tous_les_5_tours, texte: "Abolissement : gros dégâts", niveau: important }
+  - { quand: sort_lance, sort: Reconstitution Bwork, texte: "Insoignable 3 tours : tuez-la", niveau: important }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13756/donjon-bworks]

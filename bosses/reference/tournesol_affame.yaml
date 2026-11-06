@@ -1,0 +1,17 @@
+id: tournesol_affame
+nom: Tournesol Affamé
+type: donjon
+contenu: Grange du Tournesol Affamé
+niveau: 20
+position: "7,-24"
+pv: "550-810"
+sorts:
+  - { nom: Soin Feuillu, effet: "Soin de zone" }
+  - { nom: Goinfrage, effet: "Contact, vol de vie, +dégâts 2 tours" }
+  - { nom: Appel des Champs, effet: "Invocation (jusqu'à 3)" }
+strategie:
+  - Pissenlits Diaboliques et Roses Démoniaques d'abord, puis les invocations
+alertes:
+  - { quand: debut_combat, texte: "Tuez Pissenlits et Roses d'abord", niveau: info }
+fiabilite: source_unique
+sources: [https://dofus.jeuxonline.info/article/13751/donjon-champs]
