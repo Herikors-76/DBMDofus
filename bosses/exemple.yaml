@@ -1,0 +1,47 @@
+# Boss FICTIF servant de modèle de fichier. Aucune mécanique réelle de Dofus.
+# Copier ce fichier en bosses/<boss>.yaml et créer docs/bosses/<boss>.md.
+id: exemple
+nom: Gardien d'exemple
+doc: docs/bosses/exemple.md
+
+phases:
+  - id: p1
+    nom: Phase 1
+    debut: {tour: 1}
+  - id: p2
+    nom: Phase 2 (enragé)
+    debut: {tour: 6}          # bascule automatique au tour 6
+  - id: p3
+    nom: Phase 3
+                              # pas de « debut » : déclenchée à la main (Ctrl+Alt+P)
+
+mecaniques:
+  - id: onde
+    nom: Onde de choc
+    tous_les: 3
+    a_partir_de: 3            # tours 3, 6, 9...
+    alerte:
+      texte: "Onde de choc : s'écarter à 3 cases du boss"
+      niveau: critique        # info | important | critique | action
+      avance: 1               # prévenir un tour avant
+
+  - id: bouclier
+    nom: Bouclier
+    tours: [2, 5]
+    phase: p1
+    alerte:
+      texte: "Bouclier : frapper à distance"
+      niveau: important
+
+  - id: invocations
+    nom: Invocations
+    tous_les: 2
+    a_partir_de: 6
+    phase: p2
+    alerte:
+      texte: "Tuer les invocations en priorité"
+      niveau: info
+
+strategie: |
+  Placement en arc de cercle, soigneur derrière.
+  Garder un sort de fuite pour l'onde de choc.

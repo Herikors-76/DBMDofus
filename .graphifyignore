@@ -1,0 +1,18 @@
+# Périmètre du graphe : code + docs/bosses/*.md + bosses/*.yaml
+graphify-out/
+captures/
+tests/fixtures/
+venv/
+.venv/
+build/
+dist/
+__pycache__/
+*.png
+*.jpg
+*.webp
+# Docs de pilotage hors graphe (le graphe décrit le code et les boss)
+CARTE.md
+REPRISE.md
+ETAT.md
+README.md
+requirements*.txt
