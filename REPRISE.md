@@ -16,5 +16,7 @@
    où s'affiche le numéro de tour et calibrer `Config.zones["tour"]`.
 3. Choisir et brancher le moteur OCR (candidat : RapidOCR) derrière `MoteurOCR`, tests sur les fixtures,
    mesures ms/image et CPU.
-4. Écrire les premiers vrais boss de la guilde (`bosses/<id>.yaml` + `docs/bosses/<id>.md`).
+4. Premier vrai boss : **Gigalodon** (raid de guilde, 3 tours, déterministe), voir la note du projet
+   `claude/boss-mvp-recherche.md`. Il faudra ajouter au modèle la 2ᵉ action du boss à mi-tour
+   (quand la moitié des personnages a joué) et une alerte de décision (glyphe noir).
 5. Plus tard : config utilisateur persistante (zones, raccourcis), sons d'alerte, déplacement de l'overlay.
